@@ -15,18 +15,20 @@ library(readxl)
 library(tidyverse)
 library(ggplot2)
 library(purrr)
+library(foreign)
 
 # directories
-wk_dir <- '~Documents/Github/north_maluku'
-susenas_dir <- '~Desktop/susenas_data'
+wk_dir      <- '~/Documents/Github/north_maluku'
+susenas_dir <- '~/Desktop/susenas_data'
 
 ## food composition tables
 nonaquatic_fct <- read.csv(file.path(wk_dir, 'data/indonesia_fct_nonaquatic_food.csv'))
-aquatic_fct <- read.csv(file.path(wk_dir, 'data/indonesia_fct_aquatic_food.csv'))
+aquatic_fct    <- read.csv(file.path(wk_dir, 'data/indonesia_fct_aquatic_food.csv'))
+
 
 ## read DRI file
 DRI_LIST <- read.csv(file.path(wk_dir, 'data/0_DRI_natl_academies.csv'))
-DRI <- DRI_list[1,2:20]
+DRI <- DRI_LIST[1, 2:20]
 # units for minerals from here: https://www.ncbi.nlm.nih.gov/books/NBK545442/table/appJ_tab3/?report=objectonly
 # units for vitamins from here: https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t2/?report=objectonly
 #! check if the units are the same as in the food composition tables
@@ -64,6 +66,13 @@ names(blok_41) <- new_names
 #               non-0 = corresponds to the food category numbers in SUSENAS survey (e.g., 1-PADIAN) 
 # food_item_id_urut corresponds to the number linked to each food item and food category in SUSENAS survey
 
+#Farid adjusted code
+# Drop category SUBTOTAL rows. Per the metadata note above, subgroup_code == 0
+# marks a category header (PADI-PADIAN, IKAN, etc.). Summing them alongside
+# the item rows would double-count every food: 3,873 vs 1,936 kcal/capita/day.
+blok_41 <- blok_41 %>% filter(subgroup_code != 0)
+
+stopifnot(all(blok_41$subgroup_code != 0))
 
 ###################################################################################################################
 ### add units
@@ -84,8 +93,29 @@ susenas_units_clean <- susenas_units %>%
   ) %>% 
   ## remove NA and batang values
   filter(!Units == 'batang') %>% 
-  filter(!is.na(Units)) 
+  filter(!is.na(Units))
 
+#Farid adjusted code:
+   filter(subgroup_code != 0) %>%
+  filter(food_item_id_urut <= 182)
+
+#Farid adjusted code:
+susenas_units_clean <- susenas_units %>%
+  mutate(
+    unit_lc = tolower(trimws(unit)),           # collapses Ounce vs ounce
+    new_unit  = "gram",
+    new_value = case_when(
+      unit_lc == "gram"  ~ value,
+      unit_lc == "kg"    ~ value * 1000,
+      unit_lc == "ounce" ~ value * 100,        # Indonesian ons = 100 g
+      unit_lc == "ml"    ~ value * 1,          # assumes water
+      unit_lc == "liter" ~ value * 1000,       # assumes water
+      unit_lc == "galon" ~ value * 19000,      # Indonesian water gallon = 19 L
+      TRUE               ~ NA_real_
+    )
+  ) %>%
+  filter(unit != "batang") %>%                 # `!` outside the equality, safer
+  filter(!is.na(unit))
 
 ###################################################################################################################
 ### data join
@@ -107,6 +137,21 @@ consumption_nutrient <- blok_41 %>%
               rename(unit = new_unit, unit_value = new_value),
               by = c('susenas_code' = 'susenas_code'))
 
+# Farid adjusted code
+consumption_nutrient <- blok_41 %>%
+  left_join(nonaquatic_fct %>%
+              select(susenas_code, food_group, water:bdd) %>%
+              mutate(aqua = "nonaquatic"),
+            by = c("food_item_id_urut" = "susenas_code")) %>%
+  left_join(aquatic_fct %>%
+              select(susenas_code, food_group, vitamin_a:dha_epa) %>%
+              mutate(aqua = "aquatic"),
+            by = c("food_item_id_urut" = "susenas_code")) %>%
+  left_join(susenas_units_clean %>%
+              select(susenas_code, new_unit, new_value) %>%
+              rename(unit = new_unit, unit_value = new_value),
+            by = c("food_item_id_urut" = "susenas_code"))
+
 ## example
 consumption_beef <- consumption_nutrient %>% 
   filter(susenas_code == 53) %>% # daging sapi
@@ -116,6 +161,14 @@ consumption_beef <- consumption_nutrient %>%
     consumption_total = unit_value * volume_weekly_hh_total
     )
 
+# Farid adjusted code
+consumption_beef <- consumption_nutrient %>%
+  filter(food_item_id_urut == 53) %>%    # daging sapi
+  mutate(
+    consumption_weekly_hh_purchased   = unit_value * volume_weekly_hh_purchased,
+    consumption_weekly_hh_subsistence = unit_value * volume_weekly_hh_subsistence,
+    consumption_total                 = unit_value * volume_weekly_hh_total
+  )
 
 ###################################################################################################################
 # to do list 
