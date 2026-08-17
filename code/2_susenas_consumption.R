@@ -188,14 +188,143 @@ consumption_beef <- consumption_nutrient %>%
 # b. aquatic foods in grams by district
 # c. nonaquatic foods in grams by district
 
+library(readr)
+library(dplyr)
+
+DIR <- "/Users/faridannam/Documents/GitHub/north_maluku"
+
+consumption_nutrient <- read_csv(file.path(DIR, "consumption_nutrient.csv"))
+
+# grams consumed = amount recorded x grams per recorded unit.
+# Five residual items have no unit conversion and drop out via na.rm.
+household <- consumption_nutrient %>%
+  mutate(grams_weekly_hh = unit_value * volume_weekly_hh_total) %>%
+  group_by(hh_id, district) %>%
+  summarise(
+    total      = sum(grams_weekly_hh, na.rm = TRUE),
+    aquatic    = sum(grams_weekly_hh[aqua == "aquatic"],    na.rm = TRUE),
+    nonaquatic = sum(grams_weekly_hh[aqua == "nonaquatic"], na.rm = TRUE),
+    .groups = "drop"
+  )
+
+# average household in each district, grams per week
+consumption_district <- household %>%
+  group_by(district) %>%
+  summarise(
+    n_households = n(),
+    across(c(total, aquatic, nonaquatic), mean),
+    .groups = "drop"
+  ) %>%
+  mutate(pct_aquatic = 100 * aquatic / total)
+
 # total hh consumption by member: in grams by district / hh_members
 # a,b,c 
+
+household <- consumption_nutrient %>%
+  mutate(grams_weekly_member = unit_value * volume_weekly_hh_total / hh_members) %>%
+  group_by(hh_id, district) %>%
+  summarise(
+    total      = sum(grams_weekly_member, na.rm = TRUE),
+    aquatic    = sum(grams_weekly_member[aqua == "aquatic"],    na.rm = TRUE),
+    nonaquatic = sum(grams_weekly_member[aqua == "nonaquatic"], na.rm = TRUE),
+    .groups = "drop"
+  )
+
+consumption_member <- household %>%
+  group_by(district) %>%
+  summarise(
+    n_households = n(),
+    across(c(total, aquatic, nonaquatic), mean),
+    .groups = "drop"
+  ) %>%
+  mutate(pct_aquatic = 100 * aquatic / total)
+
+write_csv(consumption_member, file.path(DIR, "consumption_member.csv"))
 
 # total hh consumption by member and by urban1_rural2
 # a,b,c
 
+household <- consumption_nutrient %>%
+  mutate(grams_weekly_member = unit_value * volume_weekly_hh_total / hh_members) %>%
+  group_by(hh_id, district, urban1_rural2) %>%
+  summarise(
+    total      = sum(grams_weekly_member, na.rm = TRUE),
+    aquatic    = sum(grams_weekly_member[aqua == "aquatic"],    na.rm = TRUE),
+    nonaquatic = sum(grams_weekly_member[aqua == "nonaquatic"], na.rm = TRUE),
+    .groups = "drop"
+  )
+
+consumption_member_area <- household %>%
+  group_by(district, urban1_rural2) %>%
+  summarise(
+    n_households = n(),
+    across(c(total, aquatic, nonaquatic), mean),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    area        = if_else(urban1_rural2 == 1, "urban", "rural"),
+    pct_aquatic = 100 * aquatic / total
+  )
+
+write_csv(consumption_member_area, file.path(DIR, "consumption_member_area.csv"))
+
 # nutrients consumed by hh member
 # total hh consumption by member * iron / zinc / niacin
+
+DIR <- "/Users/faridannam/Documents/GitHub/north_maluku"
+
+consumption_nutrient <- read_csv(file.path(DIR, "consumption_nutrient.csv"))
+
+# DRI reference values, females row
+DRI <- read_csv(file.path(DIR, "0_DRI_natl_academies.csv")) %>%
+  filter(sex_cat == "females")
+
+consumption_nutrients <- consumption_nutrient %>%
+  ## consumption
+  mutate(
+    consumption_weekly_member_total = (unit_value * volume_weekly_hh_total) / hh_members
+  ) %>%
+  ## edible portion
+  # bdd is missing for all aquatic items (the fish source has no refuse data)
+  # and for three beverages. Treated as 100% edible for now - without this,
+  # every fish would silently drop out of the nutrient totals.
+  mutate(edible_portion = if_else(is.na(bdd), 1, bdd / 100)) %>%
+  mutate(
+    edible_weekly_member_total = consumption_weekly_member_total * edible_portion
+  ) %>%
+  ## nutrient totals (values are per 100 g edible portion)
+  mutate(
+    iron_weekly_member_total   = edible_weekly_member_total * (iron   / 100),
+    zinc_weekly_member_total   = edible_weekly_member_total * (zinc   / 100),
+    niacin_weekly_member_total = edible_weekly_member_total * (niacin / 100)
+  ) %>%
+  ## standardize
+  # intake is weekly but the DRI is per day, so divide by 7 first;
+  # 1 = the daily requirement is met on average
+  mutate(
+    iron_standardized_weekly_member_total   = (iron_weekly_member_total   / 7) / DRI$Iron,
+    zinc_standardized_weekly_member_total   = (zinc_weekly_member_total   / 7) / DRI$Zinc,
+    niacin_standardized_weekly_member_total = (niacin_weekly_member_total / 7) / DRI$Niacin
+  ) %>%
+  ## summarize the weekly consumption by aquatic and nonaquatic
+  # (11 items without composition values contribute grams but no nutrients;
+  #  na.rm skips them until their nutrient values are obtained)
+  group_by(aqua, hh_id, hh_id_data_link) %>%
+  summarize(
+    iron_standardized_weekly_member_total   = sum(iron_standardized_weekly_member_total,   na.rm = TRUE),
+    zinc_standardized_weekly_member_total   = sum(zinc_standardized_weekly_member_total,   na.rm = TRUE),
+    niacin_standardized_weekly_member_total = sum(niacin_standardized_weekly_member_total, na.rm = TRUE),
+    edible_weekly_member_total              = sum(edible_weekly_member_total,              na.rm = TRUE),
+    .groups = "drop"
+  )
+# each household now has two rows: what its fish supplied, and everything else.
+# A household that bought no fish this week simply has no aquatic row.
+
+write_csv(consumption_member_iron_niacin_zinc,
+          file.path(DIR, "consumption_member_iron_niacin_zinc.csv"))
+
+########################################################################################################
+
 consumption_nutrients <- consumption_nutrient %>% 
   ## consumption
   mutate(
@@ -222,4 +351,190 @@ consumption_nutrients <- consumption_nutrient %>%
   
 # wrong numbers: unit issue (DRI?), crazy volume, crazy FCT, wrong code
 
+# Hunting for wrong numbers. Four suspects:
+#   1. unit issues in the DRI standardization  - all 18 assessable nutrients
+#   2. implausible volume  - survey entry errors
+#   3. implausible FCT values - composition table errors
+#   4. food code misclassification - an item matched to the wrong food's values
+# Nothing is changed here; this script only points at records and items
+# worth a closer look. A flag is a suspicion, not a verdict.
 
+library(readr)
+library(dplyr)
+library(tidyr)
+
+DIR <- "/Users/faridannam/Documents/GitHub/north_maluku"
+
+consumption_nutrient <- read_csv(file.path(DIR, "consumption_nutrient.csv"))
+
+DRI <- read_csv(file.path(DIR, "0_DRI_natl_academies.csv")) %>%
+  filter(sex_cat == "females")
+
+# the 41 nutrient columns (per 100 g edible portion)
+nutrient_cols <- c(
+  "water","energy","fat","carbohydrate","fiber","ash",
+  "retinol","beta_carotene","total_carotene",
+  "protein","calcium","phosphorus","iron","sodium","potassium",
+  "copper","zinc","thiamin","riboflavin","niacin","vitamin_c",
+  "vitamin_a","vitamin_b6","folate","vitamin_b12","vitamin_d","vitamin_e",
+  "chromium","iodine","magnesium","manganese","selenium",
+  "leucine","lysine","methionine","phenylalanine","threonine",
+  "tryptophan","valine","ala","dha_epa"
+)
+
+## 1. unit check on the DRI standardization -----------------------------------
+# All 18 nutrients that exist in both our table and the DRI file (molybdenum
+# is in the DRI file but in no composition source, so it cannot be checked).
+# If a unit slipped anywhere, the average household lands wildly off the
+# requirement - 10x or 1000x. Two things are NOT alarms:
+#   * dha_epa is grams in our table and mg in the DRI - the x1000 below is
+#     the correct conversion, not an error;
+#   * eight nutrients exist only for aquatic foods (selenium, iodine,
+#     magnesium, manganese, chromium, vitamin_b6, vitamin_b12, dha_epa), so
+#     a LOW percentage there is the fish contribution, not a unit problem.
+dri_nutrients <- c(                      # our column = DRI file column
+  protein = "Protein",   calcium   = "Calcium",   phosphorus = "Phosphorus",
+  iron    = "Iron",      potassium = "Potassium", copper     = "Copper",
+  zinc    = "Zinc",      thiamin   = "Thiamin",   riboflavin = "Riboflavin",
+  niacin  = "Niacin",    magnesium = "Magnesium", selenium   = "Selenium",
+  iodine  = "Iodine",    chromium  = "Chromium",  manganese  = "Manganese",
+  vitamin_b6 = "VitaminB6", vitamin_b12 = "VitaminB12", dha_epa = "DHAEPA"
+)
+aquatic_only <- c("selenium","iodine","magnesium","manganese","chromium",
+                  "vitamin_b6","vitamin_b12","dha_epa")
+
+intake <- consumption_nutrient %>%
+  mutate(
+    edible = (unit_value * volume_weekly_hh_total / hh_members) *
+      if_else(is.na(bdd), 1, bdd / 100)
+  ) %>%
+  group_by(hh_id) %>%
+  summarise(across(all_of(names(dri_nutrients)),
+                   ~ sum(edible * .x / 100, na.rm = TRUE) / 7),
+            .groups = "drop")
+
+unit_check <- tibble(
+  nutrient   = names(dri_nutrients),
+  mean_daily = sapply(names(dri_nutrients), function(n) mean(intake[[n]])),
+  dri        = as.numeric(DRI[1, unname(dri_nutrients)])
+) %>%
+  mutate(
+    # the one real unit gap: grams in our table, mg in the DRI file
+    mean_daily = if_else(nutrient == "dha_epa", mean_daily * 1000, mean_daily),
+    pct_of_dri = round(100 * mean_daily / dri, 1),
+    coverage   = if_else(nutrient %in% aquatic_only,
+                         "aquatic foods only", "whole diet"),
+    verdict = case_when(
+      nutrient == "copper"              ~ "known problem - TKPI mixes mg and mcg",
+      pct_of_dri > 300                  ~ "CHECK - implausibly high",
+      pct_of_dri < 1                    ~ "CHECK - implausibly low",
+      TRUE                              ~ "ok"
+    )
+  ) %>%
+  arrange(desc(pct_of_dri))
+
+cat("1. average household as % of the daily requirement, all 18 nutrients\n",
+    "   (for 'aquatic foods only' rows the figure is the fish contribution):\n")
+print(unit_check, n = 18)
+
+## 2. implausible volume --------------------------------------------------------
+# Compare every record to the typical (median) amount of ITS OWN item -
+# 5 kg/day of drinking water is normal, 5 kg/day of salt is not, so items
+# are judged against themselves, not against each other.
+# Threshold: 10x the item median, decided by Farid (17 Aug 2026) after
+# reviewing the flagged records. Note many flags are daily-routine buyers of
+# occasionally-purchased foods (weekly volumes in multiples of 7); judge
+# flagged records by the absolute g/day, not the ratio alone.
+volumes <- consumption_nutrient %>%
+  mutate(g_member_day = unit_value * volume_weekly_hh_total / hh_members / 7) %>%
+  filter(!is.na(g_member_day), g_member_day > 0) %>%
+  group_by(food_item_id_urut) %>%
+  mutate(item_median = median(g_member_day)) %>%
+  ungroup() %>%
+  mutate(times_median = g_member_day / item_median)
+
+implausible_volume <- volumes %>%
+  group_by(food_item_id_urut) %>%
+  summarise(
+    n_records              = n(),
+    median_g_day           = median(g_member_day),
+    max_g_day              = max(g_member_day),
+    n_implausible_volume   = sum(times_median > 10),
+    .groups = "drop"
+  )
+
+cat("\n2. implausible volumes: records above 10x their item's median:\n")
+print(implausible_volume %>% filter(n_implausible_volume > 0) %>%
+        arrange(desc(n_implausible_volume)) %>% head(10))
+
+## 3. implausible FCT values -----------------------------------------------------
+# One row per food item; a value is suspicious if it is physically impossible
+# (more than 100 g of a component per 100 g of food) or more than 10x the
+# median of all items that carry that nutrient.
+fct <- consumption_nutrient %>%
+  select(food_item_id_urut, all_of(nutrient_cols)) %>%
+  distinct() %>%
+  pivot_longer(-food_item_id_urut, names_to = "nutrient", values_to = "value") %>%
+  filter(!is.na(value)) %>%
+  group_by(nutrient) %>%
+  mutate(median_all_items = median(value)) %>%
+  ungroup()
+
+gram_nutrients <- c("water","protein","fat","carbohydrate","fiber","ash",
+                    "ala","dha_epa")
+
+implausible_fct <- fct %>%
+  filter(
+    (nutrient %in% gram_nutrients & value > 100) |          # impossible
+      (median_all_items > 0 & value > 10 * median_all_items)  # extreme
+  ) %>%
+  arrange(desc(value / pmax(median_all_items, 1e-9)))
+
+cat("\n3. implausible composition values (worst first):\n")
+print(head(implausible_fct, 10))
+
+## 4. food code misclassification -------------------------------------------------
+# The survey ships its own weekly protein and calorie totals per record,
+# computed from BPS's own food-code matching. Recomputing them from our
+# values, the ratio survey/ours should sit near 1 for every item. A median
+# ratio far from 1 points at a misclassified food code - or a wrong unit,
+# or a genuinely different composition source; the flag says where to look,
+# the linking file says which it is.
+misclassification <- consumption_nutrient %>%
+  mutate(
+    edible_hh    = unit_value * volume_weekly_hh_total *
+      if_else(is.na(bdd), 1, bdd / 100),
+    ours_protein = protein / 100 * edible_hh,
+    ours_energy  = energy  / 100 * edible_hh,
+    r_protein    = if_else(ours_protein > 0,
+                           protein_weekly_hh_total  / ours_protein, NA),
+    r_energy     = if_else(ours_energy > 0,
+                           kalories_weekly_hh_total / ours_energy,  NA)
+  ) %>%
+  group_by(food_item_id_urut) %>%
+  summarise(
+    median_r_protein = median(r_protein, na.rm = TRUE),
+    median_r_energy  = median(r_energy,  na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(suspect_misclassification =
+           (median_r_protein < 0.5 | median_r_protein > 2 |
+              median_r_energy  < 0.5 | median_r_energy  > 2) %in% TRUE)
+
+cat("\n4. suspected food code misclassification (ratio far from 1):\n")
+print(misclassification %>% filter(suspect_misclassification) %>%
+        arrange(desc(pmax(abs(log(median_r_protein)),
+                          abs(log(median_r_energy)), na.rm = TRUE))) %>%
+        head(15))
+
+## one summary table: one row per item, checks 2-4 side by side -----------------
+wrong_numbers <- implausible_volume %>%
+  full_join(misclassification, by = "food_item_id_urut") %>%
+  left_join(implausible_fct %>% count(food_item_id_urut,
+                                      name = "n_implausible_fct"),
+            by = "food_item_id_urut") %>%
+  mutate(n_implausible_fct = coalesce(n_implausible_fct, 0L)) %>%
+  arrange(desc(suspect_misclassification), desc(n_implausible_fct),
+          desc(n_implausible_volume))
+
+write_csv(wrong_numbers, file.path(DIR, "wrong_numbers.csv"))
