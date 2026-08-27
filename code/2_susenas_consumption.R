@@ -70,36 +70,14 @@ names(blok_41) <- new_names
 # Drop category SUBTOTAL rows. Per the metadata note above, subgroup_code == 0
 # marks a category header (PADI-PADIAN, IKAN, etc.). Summing them alongside
 # the item rows would double-count every food: 3,873 vs 1,936 kcal/capita/day.
-blok_41 <- blok_41 %>% filter(subgroup_code != 0)
-
+blok_41 <- blok_41 %>% filter(subgroup_code != 0) %>%
+filter(food_item_id_urut <= 182)
 stopifnot(all(blok_41$subgroup_code != 0))
 
 ###################################################################################################################
 ### add units
 
-susenas_units_clean <- susenas_units %>% 
-  ## clean up units
-  mutate(
-    new_unit   = "gram",
-    new_value  = case_when(
-      unit_clean == "gram"  ~ Value,
-      unit_clean == "kg"    ~ Value * 1000,
-      unit_clean == "ounce" ~ Value * 100,        # farids comment: ...
-      unit_clean == "ml"    ~ Value * 1,          # assumes water
-      unit_clean == "liter" ~ Value * 1000,       # assumes water
-      unit_clean == "galon" ~ Value * 19000,      # indonesian water gallon
-      TRUE                  ~ NA_real_
-    )
-  ) %>% 
-  ## remove NA and batang values
-  filter(!Units == 'batang') %>% 
-  filter(!is.na(Units))
-
-#Farid adjusted code:
-   filter(subgroup_code != 0) %>%
-  filter(food_item_id_urut <= 182)
-
-#Farid adjusted code:
+#Farid adjusted code: --> use this one
 susenas_units_clean <- susenas_units %>%
   mutate(
     unit_lc = tolower(trimws(unit)),           # collapses Ounce vs ounce
@@ -120,23 +98,6 @@ susenas_units_clean <- susenas_units %>%
 ###################################################################################################################
 ### data join
 
-consumption_nutrient <- blok_41 %>% 
-  ## add nonaquatic foods fct
-  left_join(nonaquatic_fct %>% 
-              select(susenas_code, food_group, water:bdd) %>% 
-              mutate(aqua = 'nonaquatic'), 
-              by = c('food_item_id_urut' = 'susenas_code')) %>%
-  ## add aquatic foods fct
-  left_join(aquatic_fct %>% 
-              select(susenas_code, food_group, water:bdd) %>% 
-              mutate(aqua = 'aquatic'), 
-            by = c('food_item_id_urut' = 'susenas_code')) %>% 
-  ## add units
-  left_join(susenas_units_clean %>% 
-              select(susenas_code, new_unit, new_value) %>% 
-              rename(unit = new_unit, unit_value = new_value),
-              by = c('susenas_code' = 'susenas_code'))
-
 # Farid adjusted code
 consumption_nutrient <- blok_41 %>%
   left_join(nonaquatic_fct %>%
@@ -151,6 +112,38 @@ consumption_nutrient <- blok_41 %>%
               select(susenas_code, new_unit, new_value) %>%
               rename(unit = new_unit, unit_value = new_value),
             by = c("food_item_id_urut" = "susenas_code"))
+
+#nonaquatic_fct add column called dha_epa all values = zero
+#aquatic_fct and nonaquatic_fct have the same nutrients
+#delete all nutrients from AFCD that are not in nonaquatic
+#nonaquatic_fct delete columns source and source_code
+
+#blok41 left_join nonaquatic_fct --> consumption_nonaquatic
+#consumption_nonaquatic --> consumption_aquatic
+
+consumption_nonaquatic <- blok_41 %>%
+  left_join(nonaquatic_fct %>%
+              select(susenas_code, food_group, water:bdd) %>%
+              mutate(aqua = "nonaquatic"),
+            by = c("food_item_id_urut" = "susenas_code"))
+
+consumption_aquatic <- consumption_nonaquatic %>%
+  drop_na(water) %>%
+  select(-c(water:aqua)) %>%   #Farid: all the columns from nonaquatic_fct must be removed here
+  left_join(aquatic_fct %>%
+              mutate(aqua = "aquatic"),
+            by = c("food_item_id_urut" = "susenas_code"))
+
+consumption_nutrient <- consumption_nonaquatic %>%
+  drop_na(water) %>%
+  rbind(consumption_aquatic) %>%
+  left_join(susenas_units_clean %>%
+              select(susenas_code, new_unit, new_value) %>%
+              rename(unit = new_unit, unit_value = new_value), #check if culumn names if they are the same
+            by = c("food_item_id_urut" = "susenas_code"))
+
+#make sure all blok 41 and all nutrient from TKPI (+dha_epa) are there
+#20-30 sample size (QC)
 
 ## example
 consumption_beef <- consumption_nutrient %>% 

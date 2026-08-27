@@ -2,7 +2,7 @@
 # There will be 4 datasets built from these scripts. Run them one by one from 1 to 4. 
 # Change the output directory to your directory
 # 1. indonesia_fct_nonaquatic_food.csv
-# 2. indonesia_fct_aquatic_food.csv (also generates  linking_susenas_afcd.csv)
+# 2. indonesia_fct_aquatic_food.csv
 # 3. indonesia_fct_gap_filling.csv (also generates  usda_myfcd_nut_values.csv)
 # 4. indonesia_fct_complete.csv (final combination from nonaquatic, aquatic, and gap filling files)
 # Each script is marked by two-line hashtags, as shown below
@@ -337,25 +337,22 @@ if (n_bad == 0) {
 # Name: Farid Annam
 # Affiliation: Harvard T.H. Chan School of Public Health
 # For: north_maluku
-# Date updated: 8/25/2026
+# Date updated: 8/27/2026
 ###################################################################################################################
 # Method:
-#  - 32 SUSENAS items link to exactly one AFCD fish and take its 32 nutrient
-#    values at full precision from fish_book_afcd.csv.
-#  - 3 composite items (18 Tongkol group, 26 Mas/nila, 33 Ikan segar lainnya)
-#    have no single species: their values are a consumption-weighted mean
-#    across the 10 districts, weighted by 2020 consumption (survey year) from
-#    fish_consumption_afcd_v6.xlsx. The 2020 column equals the BPS publication
-#    "Average Weekly Per Capita Consumption by Fish Group, 2020" (kg/capita/
-#    week, verified cell by cell); units cancel in the weighted mean.
-#  - A district missing a nutrient is excluded from that nutrient's weighted
-#    mean; missing is never treated as zero.
-#  - The workbook abbreviates item 18 as "Tongkol, tuna, cakalang, dencis";
-#    it is remapped to the full SUSENAS wording.
-#  - "Olahan ikan segar (siomay ikan, otak-otak ikan, dll)" appears in the
-#    workbook but is not a SUSENAS composition item; it is excluded.
-#  - Item 16 "IKAN" is the fish category header: one row with blank nutrients,
-#    mirroring the category headers of the non-aquatic table.
+#  - Every SUSENAS item takes the plain mean of its linked fish-book rows,
+#    the same rule the non-aquatic table uses for its code pools. 33 items
+#    link to exactly one row (including 33 Ikan segar/basah lainnya and 41
+#    Tongkol group diawetkan, which use their dedicated fish-book entries)
+#    and are that row at full precision. Two items pool several rows:
+#      18 Tongkol group (fresh) = mean of Tongkol, Tuna, Cakalang/dencis
+#      26 Mas, nila             = mean of Mas, Nila
+#    The 2020 survey publishes no species split below province level, so the
+#    members enter with equal shares; consumption is not used in this table.
+#  - A nutrient missing for a member is excluded from that nutrient's mean,
+#    never treated as zero.
+#  - Item 16 "IKAN" is the fish category header: one row with blank
+#    nutrients, mirroring the category headers of the non-aquatic table.
 # The script stops on any unexpected condition instead of passing it through.
 
 # clear workspace
@@ -364,7 +361,6 @@ graphics.off()
 
 # libraries
 library(tidyverse)
-library(readxl)
 
 # directories
 wk_dir  <- '~/Documents/Github/north_maluku'
@@ -386,7 +382,7 @@ afcd_map <- c(VitaminA='vitamin_a', Thiamin='thiamin', Riboflavin='riboflavin',
 nutr <- unname(afcd_map)
 
 ###################################################################################################################
-## 1. Linking file - 35 items, 42 linked fish; add the item 16 header row
+## 1. Linking file - 35 items, 38 linked fish, plus the item 16 header
 
 lk <- read_csv(file.path(wk_dir, 'data/linking_susenas_afcd.csv'),
                col_types = cols(.default = col_character()), progress = FALSE)
@@ -404,22 +400,17 @@ if (nrow(header16) == 0) {
 stopifnot(nrow(header16) == 1,
           header16$susenas_item == 'IKAN', header16$food_group == 'IKAN')
 
-# items linked to more than one fish are the composites
 n_fish <- lk %>% count(susenas_code, susenas_item)
-composites <- n_fish$susenas_item[n_fish$n > 1]
+pooled <- n_fish$susenas_item[n_fish$n > 1]
 cat('Linking file:', nrow(lk), 'fish across', nrow(n_fish), 'items;',
-    length(composites), 'composites\n')
+    length(pooled), 'pooled items (equal-mean):',
+    paste(pooled, collapse = ' | '), '\n')
 
 lk_out <- bind_rows(header16, lk) %>%
   arrange(as.numeric(susenas_code))
 
-stopifnot(dir.exists(out_dir))
-link_path <- file.path(out_dir, 'linking_susenas_afcd.csv')
-write.csv(lk_out, link_path, row.names = FALSE, fileEncoding = 'UTF-8', na = '')
-cat('Wrote ', link_path, '  (', nrow(lk_out), ' rows)\n', sep = '')
-
 ###################################################################################################################
-## 2. One-to-one items - full-precision values from the AFCD fish book
+## 2. Values - the plain mean of each item's linked fish-book rows
 
 # the fish book's first column is an unnamed row index; name it quietly
 fish <- read_csv(file.path(wk_dir, 'data/fish_book_afcd.csv'),
@@ -428,58 +419,31 @@ fish <- read_csv(file.path(wk_dir, 'data/fish_book_afcd.csv'),
 stopifnot(all(names(afcd_map) %in% names(fish)))
 names(fish)[match(names(afcd_map), names(fish))] <- nutr
 
-one_links <- lk %>% filter(!susenas_item %in% composites)
-stopifnot(nrow(one_links) == nrow(n_fish) - length(composites))
-
 # every linked fish name must match exactly one fish-book row (by local name)
-n_hits <- vapply(one_links$food_name,
+n_hits <- vapply(lk$food_name,
                  function(z) sum(fish$bahasa == z, na.rm = TRUE), numeric(1))
 if (any(n_hits != 1))
   stop('fish name(s) without a unique fish-book match: ',
-       paste(one_links$food_name[n_hits != 1], collapse = ' | '))
+       paste(unique(lk$food_name[n_hits != 1]), collapse = ' | '))
 
-one_to_one <- one_links %>%
+# mean over the linked rows; a member missing a nutrient is excluded from
+# that nutrient's mean (an item linked to one row is simply that row)
+vals <- lk %>%
   select(susenas_item, food_name) %>%
   left_join(fish, by = c('food_name' = 'bahasa')) %>%
-  select(susenas_item, all_of(nutr))
-cat('One-to-one items:', nrow(one_to_one), '\n')
-
-###################################################################################################################
-## 3. Composite items - 2020 consumption-weighted mean across districts
-
-bc <- read_excel(file.path(wk_dir, 'data/fish_consumption_afcd_v6.xlsx'),
-                 sheet = 1, .name_repair = 'minimal')
-stopifnot(all(c('fish_name', 'city', '2020', names(afcd_map)) %in% names(bc)))
-names(bc)[match(names(afcd_map), names(bc))] <- nutr
-
-# the workbook abbreviates item 18; restore the full SUSENAS wording
-bc <- bc %>%
-  mutate(item = ifelse(fish_name == 'Tongkol, tuna, cakalang, dencis',
-                       'Tongkol, tuna, cakalang, dencis, ikan kayu',
-                       fish_name),
-         across(all_of(c('2020', nutr)), ~ suppressWarnings(as.numeric(.x))))
-
-comp_rows <- bc %>% filter(item %in% composites)
-stopifnot(nrow(comp_rows) == 10 * length(composites))   # 10 districts each
-
-# weighted mean using 2020 consumption; districts missing a nutrient drop out
-comp_vals <- comp_rows %>%
-  group_by(susenas_item = item) %>%
+  group_by(susenas_item) %>%
   summarise(across(all_of(nutr), ~ {
-    ok <- !is.na(.x) & !is.na(`2020`)
-    if (!any(ok) || sum(`2020`[ok]) == 0) NA_real_
-    else sum(.x[ok] * `2020`[ok]) / sum(`2020`[ok])
+    v <- .x[!is.na(.x)]
+    if (length(v) == 0) NA_real_ else mean(v)
   }), .groups = 'drop')
-cat('Composite items (2020-weighted):', nrow(comp_vals), '\n')
+stopifnot(nrow(vals) == nrow(n_fish))
+cat('Items computed:', nrow(vals), '\n')
 
 ###################################################################################################################
-## 4. Assemble the table - header row 16 + 35 items
+## 3. Assemble the table - header row 16 + 35 items
 
 keys <- lk_out %>% distinct(coicop_code, susenas_code, susenas_item, food_group)
 stopifnot(nrow(keys) == nrow(n_fish) + 1)   # 35 items + the header
-
-vals <- bind_rows(one_to_one %>% select(-any_of('food_name')), comp_vals)
-stopifnot(nrow(vals) == nrow(n_fish), !any(duplicated(vals$susenas_item)))
 
 aquatic <- keys %>%
   mutate(susenas_code = as.numeric(susenas_code)) %>%
@@ -487,25 +451,26 @@ aquatic <- keys %>%
   arrange(susenas_code)
 stopifnot(ncol(aquatic) == 4 + length(nutr))
 
+stopifnot(dir.exists(out_dir))
 out_path <- file.path(out_dir, 'indonesia_fct_aquatic_food.csv')
 write.csv(aquatic, out_path, row.names = FALSE, fileEncoding = 'UTF-8', na = '')
 cat('Wrote ', out_path, '  (', nrow(aquatic), ' x ', ncol(aquatic), ')\n', sep = '')
 
 ###################################################################################################################
-## 5. Cell-by-cell comparison against the published table
+## 4. Cell-by-cell comparison against the published table
 ##
-## Expected result: the 32 one-to-one items match exactly; item 16 is new
-## (not in the published table); items 18, 26 and 33 differ slightly because
-## the published table weighted by 2018-2025 consumption and this build
-## weights by 2020 only.
+## Expected against the previous published version: items 18, 26 and 33
+## differ (the pooled items moved from consumption-weighted district mixes
+## to the rules above); items 41 and 51 differ in susenas_item only (the
+## VSEN20.KP renaming); everything else is identical.
 
 pub <- read_csv(file.path(wk_dir, 'data/indonesia_fct_aquatic_food.csv'),
                 show_col_types = FALSE, progress = FALSE)
 cat('\n---- rebuilt vs published ----\n')
-cat('rows:', nrow(pub), 'published /', nrow(aquatic), 'rebuilt',
-    '(the extra row is the item 16 header)\n')
+cat('rows:', nrow(pub), 'published /', nrow(aquatic), 'rebuilt\n')
 new_rows <- setdiff(aquatic$susenas_code, pub$susenas_code)
-cat('rows not in published:', paste(new_rows, collapse = ', '), '\n')
+if (length(new_rows)) cat('rows not in published:',
+                          paste(new_rows, collapse = ', '), '\n')
 
 both <- inner_join(pub, aquatic, by = 'susenas_code',
                    suffix = c('_pub', '_new'))
@@ -529,17 +494,21 @@ for (cn in setdiff(names(pub), 'susenas_code')) {
 if (n_bad == 0) {
   cat('  all shared rows identical on all columns.\n')
 } else {
-  only_comp <- all(unlist(lapply(setdiff(names(pub), 'susenas_code'), function(cn) {
-    a <- suppressWarnings(as.numeric(both[[paste0(cn, '_pub')]]))
-    b <- suppressWarnings(as.numeric(both[[paste0(cn, '_new')]]))
-    d <- !((is.na(a) & is.na(b)) | (!is.na(a) & !is.na(b) & abs(a - b) <= 1e-9))
-    all(both$susenas_code[d] %in% c(18, 26, 33))
+  expected <- all(unlist(lapply(setdiff(names(pub), 'susenas_code'), function(cn) {
+    a <- both[[paste0(cn, '_pub')]]; b <- both[[paste0(cn, '_new')]]
+    if (is.numeric(a) || is.numeric(b)) {
+      a <- suppressWarnings(as.numeric(a)); b <- suppressWarnings(as.numeric(b))
+      d <- !((is.na(a) & is.na(b)) | (!is.na(a) & !is.na(b) & abs(a - b) <= 1e-9))
+      all(both$susenas_code[d] %in% c(18, 26, 33))
+    } else {
+      a <- ifelse(is.na(a), '', str_trim(a)); b <- ifelse(is.na(b), '', str_trim(b))
+      all(both$susenas_code[a != b] %in% c(18, 26, 33, 41, 51))
+    }
   })))
   cat('  differing cells:', n_bad,
-      if (only_comp) '- ALL confined to the composites (18, 26, 33), as expected from the 2020-only weighting.\n'
-      else '- WARNING: differences outside the composite items!\n')
+      if (expected) '- all confined to the pooled items (18, 26, 33) and the renamed labels (41, 51), as expected.\n'
+      else '- WARNING: differences outside the expected items!\n')
 }
-#
 ###################################################################################################################
 ###################################################################################################################
 #
