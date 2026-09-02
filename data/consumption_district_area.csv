@@ -1,0 +1,30 @@
+district,district_name,area,n_households,total,aquatic,nonaquatic,pct_aquatic
+1,Halmahera Barat,all,513,930.34,94.04,836.3,10.11
+1,Halmahera Barat,urban,51,1081.68,113.69,967.99,10.51
+1,Halmahera Barat,rural,462,916.66,92.26,824.4,10.06
+2,Halmahera Tengah,all,468,798.64,111.84,686.81,14
+2,Halmahera Tengah,urban,38,996.24,114.22,882.02,11.47
+2,Halmahera Tengah,rural,430,785.75,111.68,674.07,14.21
+3,Kepulauan Sula,all,541,790.96,116.51,674.45,14.73
+3,Kepulauan Sula,urban,56,846.64,109.89,736.75,12.98
+3,Kepulauan Sula,rural,485,778.61,117.99,660.62,15.15
+4,Halmahera Selatan,all,523,821.35,116.1,705.25,14.14
+4,Halmahera Selatan,urban,46,1000.19,149.6,850.59,14.96
+4,Halmahera Selatan,rural,477,807.27,113.46,693.81,14.05
+5,Halmahera Utara,all,549,768.58,91.1,677.48,11.85
+5,Halmahera Utara,urban,141,894.87,91.8,803.06,10.26
+5,Halmahera Utara,rural,408,730.87,90.89,639.99,12.44
+6,Halmahera Timur,all,516,848.53,102.32,746.21,12.06
+6,Halmahera Timur,urban,56,623.08,64.45,558.63,10.34
+6,Halmahera Timur,rural,460,880.63,107.71,772.92,12.23
+7,Pulau Morotai,all,510,872.16,81.54,790.62,9.35
+7,Pulau Morotai,urban,45,720.25,115.79,604.46,16.08
+7,Pulau Morotai,rural,465,897.01,75.94,821.07,8.47
+8,Pulau Taliabu,all,521,904.45,126.5,777.95,13.99
+8,Pulau Taliabu,rural,521,904.45,126.5,777.95,13.99
+71,Kota Ternate,all,557,840.3,92.55,747.74,11.01
+71,Kota Ternate,urban,464,851.91,92.45,759.46,10.85
+71,Kota Ternate,rural,93,753.28,93.3,659.98,12.39
+72,Kota Tidore Kepulauan,all,582,909.47,96.2,813.27,10.58
+72,Kota Tidore Kepulauan,urban,259,900.37,93.36,807.01,10.37
+72,Kota Tidore Kepulauan,rural,323,915.58,98.11,817.48,10.72

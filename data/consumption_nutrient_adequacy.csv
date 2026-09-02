@@ -1,0 +1,122 @@
+district,district_name,nutrient,unit,total,aquatic,nonaquatic,dri,pct_dri_total,pct_dri_aquatic
+1,Halmahera Barat,calcium,mg,440.31,38.78,401.53,1100,40.03,3.53
+1,Halmahera Barat,copper,mg,12.76,0.16,12.59,0.896666666666667,1422.62,18.39
+1,Halmahera Barat,dha_epa,g,0.49,0.49,0,250,196.34,195.88
+1,Halmahera Barat,iron,mg,11.83,1.54,10.29,17,69.61,9.09
+1,Halmahera Barat,niacin,mg,27.91,9.67,18.24,14,199.32,69.05
+1,Halmahera Barat,phosphorus,mg,900.88,217.06,683.82,883.333333333333,101.99,24.57
+1,Halmahera Barat,potassium,mg,1588.91,335.15,1253.76,2500,63.56,13.41
+1,Halmahera Barat,protein,g,54.3,18.89,35.42,46,118.05,41.06
+1,Halmahera Barat,riboflavin,mg,0.92,0.12,0.8,1.06666666666667,85.91,10.81
+1,Halmahera Barat,thiamin,mg,1.86,0.1,1.76,1.06666666666667,174.16,9.01
+1,Halmahera Barat,zinc,mg,6.87,1.52,5.35,8.33333333333333,82.42,18.2
+2,Halmahera Tengah,calcium,mg,428.52,43.1,385.42,1100,38.96,3.92
+2,Halmahera Tengah,copper,mg,17.36,0.18,17.19,0.896666666666667,1936.51,19.53
+2,Halmahera Tengah,dha_epa,g,0.56,0.56,0,250,223.83,223.26
+2,Halmahera Tengah,iron,mg,11,1.75,9.25,17,64.71,10.27
+2,Halmahera Tengah,niacin,mg,21.69,11.86,9.83,14,154.96,84.74
+2,Halmahera Tengah,phosphorus,mg,863.67,256.31,607.36,883.333333333333,97.77,29.02
+2,Halmahera Tengah,potassium,mg,1354.69,373.58,981.11,2500,54.19,14.94
+2,Halmahera Tengah,protein,g,53.72,22.55,31.16,46,116.77,49.03
+2,Halmahera Tengah,riboflavin,mg,1.18,0.14,1.04,1.06666666666667,110.23,12.83
+2,Halmahera Tengah,thiamin,mg,1.71,0.12,1.59,1.06666666666667,159.91,11.15
+2,Halmahera Tengah,zinc,mg,6.44,1.78,4.66,8.33333333333333,77.24,21.35
+3,Kepulauan Sula,calcium,mg,374.51,45.01,329.5,1100,34.05,4.09
+3,Kepulauan Sula,copper,mg,6.93,0.21,6.73,0.896666666666667,773.28,23.03
+3,Kepulauan Sula,dha_epa,g,0.65,0.65,0,250,259.24,258.42
+3,Kepulauan Sula,iron,mg,10.78,1.93,8.85,17,63.42,11.38
+3,Kepulauan Sula,niacin,mg,37.88,12.24,25.64,14,270.57,87.46
+3,Kepulauan Sula,phosphorus,mg,887.84,261.75,626.1,883.333333333333,100.51,29.63
+3,Kepulauan Sula,potassium,mg,1222.38,368.57,853.8,2500,48.9,14.74
+3,Kepulauan Sula,protein,g,54.92,23.24,31.68,46,119.39,50.52
+3,Kepulauan Sula,riboflavin,mg,0.81,0.15,0.66,1.06666666666667,76.21,14.42
+3,Kepulauan Sula,thiamin,mg,1.56,0.12,1.44,1.06666666666667,146.28,11.49
+3,Kepulauan Sula,zinc,mg,6.3,1.88,4.42,8.33333333333333,75.63,22.56
+4,Halmahera Selatan,calcium,mg,367.66,46.26,321.41,1100,33.42,4.21
+4,Halmahera Selatan,copper,mg,14.01,0.18,13.83,0.896666666666667,1562.26,20.2
+4,Halmahera Selatan,dha_epa,g,0.63,0.63,0,250,252.59,252.52
+4,Halmahera Selatan,iron,mg,10.41,1.93,8.49,17,61.26,11.34
+4,Halmahera Selatan,niacin,mg,29.74,11.96,17.77,14,212.39,85.44
+4,Halmahera Selatan,phosphorus,mg,818.52,266.13,552.38,883.333333333333,92.66,30.13
+4,Halmahera Selatan,potassium,mg,1487.28,385.77,1101.51,2500,59.49,15.43
+4,Halmahera Selatan,protein,g,51.09,23.21,27.88,46,111.07,50.46
+4,Halmahera Selatan,riboflavin,mg,0.84,0.15,0.69,1.06666666666667,78.62,14.11
+4,Halmahera Selatan,thiamin,mg,1.76,0.12,1.63,1.06666666666667,164.56,11.62
+4,Halmahera Selatan,zinc,mg,6.06,1.81,4.25,8.33333333333333,72.77,21.74
+5,Halmahera Utara,calcium,mg,408,34.5,373.51,1100,37.09,3.14
+5,Halmahera Utara,copper,mg,9.6,0.13,9.46,0.896666666666667,1070.15,14.61
+5,Halmahera Utara,dha_epa,g,0.45,0.45,0,250,180.8,180.74
+5,Halmahera Utara,iron,mg,10.75,1.42,9.33,17,63.22,8.36
+5,Halmahera Utara,niacin,mg,22.27,9.7,12.57,14,159.1,69.3
+5,Halmahera Utara,phosphorus,mg,815.96,217.32,598.64,883.333333333333,92.37,24.6
+5,Halmahera Utara,potassium,mg,1273.62,317.78,955.85,2500,50.94,12.71
+5,Halmahera Utara,protein,g,50.04,18.52,31.52,46,108.78,40.27
+5,Halmahera Utara,riboflavin,mg,0.84,0.11,0.73,1.06666666666667,78.79,10.18
+5,Halmahera Utara,thiamin,mg,1.7,0.1,1.61,1.06666666666667,159.73,9.23
+5,Halmahera Utara,zinc,mg,5.96,1.43,4.53,8.33333333333333,71.54,17.17
+6,Halmahera Timur,calcium,mg,443.94,39.03,404.91,1100,40.36,3.55
+6,Halmahera Timur,copper,mg,13.47,0.21,13.25,0.896666666666667,1501.96,23.76
+6,Halmahera Timur,dha_epa,g,0.55,0.55,0,250,220.11,220.01
+6,Halmahera Timur,iron,mg,11.47,1.86,9.61,17,67.48,10.92
+6,Halmahera Timur,niacin,mg,21.76,11.37,10.39,14,155.4,81.22
+6,Halmahera Timur,phosphorus,mg,844.2,211.42,632.78,883.333333333333,95.57,23.93
+6,Halmahera Timur,potassium,mg,1388.73,301.18,1087.56,2500,55.55,12.05
+6,Halmahera Timur,protein,g,53.49,20.44,33.05,46,116.28,44.43
+6,Halmahera Timur,riboflavin,mg,1.05,0.13,0.91,1.06666666666667,98.12,12.49
+6,Halmahera Timur,thiamin,mg,1.28,0.1,1.18,1.06666666666667,120.44,9.83
+6,Halmahera Timur,zinc,mg,6.6,1.77,4.83,8.33333333333333,79.16,21.24
+7,Pulau Morotai,calcium,mg,401.55,33.66,367.9,1100,36.5,3.06
+7,Pulau Morotai,copper,mg,13.18,0.13,13.05,0.896666666666667,1469.55,14.58
+7,Pulau Morotai,dha_epa,g,0.42,0.42,0,250,168.06,168.06
+7,Pulau Morotai,iron,mg,10.71,1.26,9.45,17,63.01,7.41
+7,Pulau Morotai,niacin,mg,19.12,8.12,11,14,136.54,57.98
+7,Pulau Morotai,phosphorus,mg,791.3,197.77,593.53,883.333333333333,89.58,22.39
+7,Pulau Morotai,potassium,mg,1521.7,302.34,1219.36,2500,60.87,12.09
+7,Pulau Morotai,protein,g,46.98,16.32,30.67,46,102.14,35.48
+7,Pulau Morotai,riboflavin,mg,0.9,0.1,0.81,1.06666666666667,84.79,9.09
+7,Pulau Morotai,thiamin,mg,1.32,0.08,1.24,1.06666666666667,124.12,7.89
+7,Pulau Morotai,zinc,mg,5.89,1.28,4.61,8.33333333333333,70.65,15.35
+8,Pulau Taliabu,calcium,mg,393.21,48.66,344.55,1100,35.75,4.42
+8,Pulau Taliabu,copper,mg,10.99,0.21,10.77,0.896666666666667,1225.22,23.9
+8,Pulau Taliabu,dha_epa,g,0.63,0.63,0,250,253.06,252.74
+8,Pulau Taliabu,iron,mg,11.32,2.03,9.29,17,66.58,11.92
+8,Pulau Taliabu,niacin,mg,56.42,12.88,43.54,14,402.97,91.99
+8,Pulau Taliabu,phosphorus,mg,885,285.36,599.63,883.333333333333,100.19,32.31
+8,Pulau Taliabu,potassium,mg,1529.78,410.59,1119.19,2500,61.19,16.42
+8,Pulau Taliabu,protein,g,55.8,25.1,30.7,46,121.3,54.57
+8,Pulau Taliabu,riboflavin,mg,1.03,0.16,0.87,1.06666666666667,96.34,14.99
+8,Pulau Taliabu,thiamin,mg,1.61,0.13,1.48,1.06666666666667,150.78,12.16
+8,Pulau Taliabu,zinc,mg,6.52,2,4.51,8.33333333333333,78.21,24.06
+71,Kota Ternate,calcium,mg,505.69,34.93,470.76,1100,45.97,3.18
+71,Kota Ternate,copper,mg,11.17,0.13,11.03,0.896666666666667,1245.46,14.98
+71,Kota Ternate,dha_epa,g,0.49,0.49,0,250,197,196.91
+71,Kota Ternate,iron,mg,12.76,1.55,11.22,17,75.07,9.09
+71,Kota Ternate,niacin,mg,23.19,9.92,13.28,14,165.68,70.83
+71,Kota Ternate,phosphorus,mg,898.43,222.15,676.28,883.333333333333,101.71,25.15
+71,Kota Ternate,potassium,mg,1280.7,324.23,956.48,2500,51.23,12.97
+71,Kota Ternate,protein,g,54.34,18.87,35.47,46,118.13,41.02
+71,Kota Ternate,riboflavin,mg,0.88,0.11,0.77,1.06666666666667,82.67,10.69
+71,Kota Ternate,thiamin,mg,1.85,0.1,1.75,1.06666666666667,173.01,9.26
+71,Kota Ternate,zinc,mg,6.47,1.45,5.02,8.33333333333333,77.6,17.36
+72,Kota Tidore Kepulauan,calcium,mg,478.01,38.88,439.13,1100,43.46,3.53
+72,Kota Tidore Kepulauan,copper,mg,18.21,0.14,18.06,0.896666666666667,2030.66,16.05
+72,Kota Tidore Kepulauan,dha_epa,g,0.55,0.55,0,250,219.25,219.14
+72,Kota Tidore Kepulauan,iron,mg,12.49,1.57,10.92,17,73.44,9.21
+72,Kota Tidore Kepulauan,niacin,mg,24.97,9.89,15.08,14,178.34,70.61
+72,Kota Tidore Kepulauan,phosphorus,mg,952.69,228.37,724.32,883.333333333333,107.85,25.85
+72,Kota Tidore Kepulauan,potassium,mg,1517.83,341.99,1175.83,2500,60.71,13.68
+72,Kota Tidore Kepulauan,protein,g,56.84,19.39,37.45,46,123.57,42.15
+72,Kota Tidore Kepulauan,riboflavin,mg,1.19,0.12,1.07,1.06666666666667,111.77,11.52
+72,Kota Tidore Kepulauan,thiamin,mg,2.2,0.1,2.09,1.06666666666667,205.87,9.54
+72,Kota Tidore Kepulauan,zinc,mg,6.66,1.48,5.18,8.33333333333333,79.88,17.73
+,PROVINCE,calcium,mg,427.13,39.68,387.46,1100,38.83,3.61
+,PROVINCE,copper,mg,12.37,0.16,12.21,0.896666666666667,1379.66,18.19
+,PROVINCE,dha_epa,g,0.54,0.54,0,250,215.51,215.3
+,PROVINCE,iron,mg,11.39,1.67,9.72,17,67.01,9.82
+,PROVINCE,niacin,mg,27.07,10.66,16.41,14,193.37,76.12
+,PROVINCE,phosphorus,mg,862.47,234.96,627.51,883.333333333333,97.64,26.6
+,PROVINCE,potassium,mg,1396.3,343.74,1052.56,2500,55.85,13.75
+,PROVINCE,protein,g,52.89,20.44,32.45,46,114.97,44.43
+,PROVINCE,riboflavin,mg,0.92,0.13,0.8,1.06666666666667,86.51,11.96
+,PROVINCE,thiamin,mg,1.73,0.11,1.62,1.06666666666667,161.76,10.05
+,PROVINCE,zinc,mg,6.33,1.61,4.72,8.33333333333333,75.99,19.33
