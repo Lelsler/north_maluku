@@ -1,15 +1,670 @@
-coicop_code,susenas_code,susenas_item,food_group,source,source_codes,energy,protein,fat,dha_epa,carbohydrate,fiber,ash,retinol,beta_carotene,thiamin,riboflavin,niacin,vitamin_c,calcium,copper,iron,phosphorus,potassium,sodium,zinc,bdd
-01.2.1.1.001,130,"Kopi (bubuk, biji)",BAHAN MINUMAN,gap_filling,usda:2088673,500,20,20,1,60,40,,,,,,,,200,,7.2,,,100,,100
-01.1.9.2.001,134,Garam,BUMBU-BUMBUAN,gap_filling,usda:746775,0,0,0,1,0,0,99,0,0,0,0,0,0,50,0,0,0,2,38700,0,100
-01.1.9.4.008,141,Penyedap masakan/vetsin,BUMBU-BUMBUAN,gap_filling,usda:2449440; usda:2032559,0,0,0,1,0,0,,,,,,,,,,,,,12500,,100
-01.1.9.4.007,144,"Bumbu maskan jadi/kemasan, bumbu racikan",BUMBU-BUMBUAN,gap_filling,usda:2032322; usda:2032236; usda:2032401; usda:2032198; usda:2032292,250.34000000000003,9.360000000000001,11.44,1,28.560000000000002,8.88,,,,,,,,47.06,,3.634,,,5515.860000000001,,100
-11.1.1.1.015,158,"Gado-gado, ketoprak, pecel",MAKANAN MINUMAN JADI,gap_filling,tkpi:AP060; tkpi:DP031,145,7,5.45,1,17,2,2.05,3,,0.07500000000000001,,,0.5,227,,5.45,134.5,,,,100
-11.1.1.1.023,162,Lontong/ketupat sayur,MAKANAN MINUMAN JADI,gap_filling,usda:746775; tkpi:KP003; tkpi:HR002; tkpi:DR123; tkpi:DR097; tkpi:DR130; tkpi:KR012; tkpi:NR007; tkpi:NR008; tkpi:NR014; tkpi:NR019; tkpi:NR022; tkpi:NR010; smiling:63,151.75,3.03685,7.7260500000000025,1,17.52136,1.7222400000000002,0.6703099999999999,6.1000000000000005,472.5724,0.048972,0.047126,0.39269000000000004,4.1156999999999995,22.494947,0.06802899999999999,0.6689100000000001,41.7156,89.43216,157.95024999999998,0.45019000000000003,96.0866
-11.1.1.1.040,165,"Sate, tongseng",MAKANAN MINUMAN JADI,gap_filling,myfcd:222016; myfcd:222006; myfcd:236003; usda:746775; tkpi:FR019; tkpi:DR044; tkpi:DR161; tkpi:KP003; tkpi:NP005; tkpi:KR012; tkpi:MP006; tkpi:NR007; tkpi:NR008; tkpi:NR015; tkpi:NR018; tkpi:NR010,169.60416666666669,16.541,8.067916666666667,1,7.940250000000001,0.8179166666666666,2.4605,26.833333333333336,795.5525,0.08838333333333336,0.13343333333333338,3.749416666666667,2.5108333333333333,28.672179999999997,0.11239999999999999,2.122333333333333,231.61250000000007,183.79825000000002,200.22666666666666,0.8115000000000001,98.3775
-11.1.1.1.004/11111208,171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",MAKANAN MINUMAN JADI,gap_filling,usda:172112; tkpi:FP013; tkpi:FP015; tkpi:FP016; tkpi:FP017,290.8,18.580000000000002,22.14,1,4.300000000000001,0.6,3.1580000000000004,244.60000000000002,10.4,0.10720000000000002,0.317,4.848000000000001,0,22.200000000000003,0.1038,3.1060000000000008,178.79999999999998,260.82,874.2,2.75,100
-11.1.1.3.008,172,Bubur ayam,MAKANAN MINUMAN JADI,gap_filling,usda:746775; tkpi:AR001; tkpi:FR005; tkpi:KR012; tkpi:NP005; tkpi:BP045; tkpi:DR147; tkpi:NR018,95.98250000000002,2.647,3.92625,1,12.593749999999998,0.26849999999999996,1.44,17.150000000000002,273.34499999999997,0.038599999999999995,0.0236,1.1535,0.15,25.498725,0.02995,0.4625000000000001,31.052500000000002,46.54925,421.85625,0.12825,96.66
-11.1.1.3.003,173,"Siomay, batagor",MAKANAN MINUMAN JADI,gap_filling,usda:1852651; usda:746775; tkpi:BP070; tkpi:CP061; tkpi:BR013; tkpi:DR044; tkpi:HR002; tkpi:NR008; tkpi:KR012; aquatic:19,180.28,7.572,7.59,0.19661730000000002,20.365000000000002,0.617,1.4950000000000003,5.08,1527.5700000000002,0.0663,19.8439,2.85,3.21,69.09469,0.136686,1.2999999999999998,121.362,148.0705,257.5695,0.4196,85.8154798206278
-11.1.1.1.058,175,Air kemasan,MAKANAN MINUMAN JADI,gap_filling,,0,0,0,1,0,0,0,0,0,0,0,0,0,0.914,0,0,0,0.3,3.5,0,100
-01.2.2.1.000,176,Air kemasan galon,MAKANAN MINUMAN JADI,gap_filling,,0,0,0,1,0,0,0,0,0,0,0,0,0,0.914,0,0,0,0.3,3.5,0,100
-11.1.1.1.051,181,Es lainnya,MAKANAN MINUMAN JADI,gap_filling,usda:498708; tkpi:KP003; tkpi:MP006; tkpi:ER071; tkpi:QR001; tkpi:ER046; tkpi:JP007; tkpi:MP014; tkpi:ER054; tkpi:ER070; tkpi:ER001; tkpi:CP009; tkpi:ER106,76.80399999999999,1.5463333333333331,1.769333333333333,1,14.289,0.6006666666666667,0.519,9.3,32.339999999999996,0.023300000000000005,0.05433333333333334,0.2743333333333334,3.1366666666666667,36.526779999999995,11.568466666666666,0.5166666666666666,30.55666666666667,139.94333333333336,17.648333333333333,0.31399999999999995,88.1566666666667
-02.1.1.0.000,182,Minuman keras,MAKANAN MINUMAN JADI,gap_filling,usda:168746; usda:173664,169,0.23,0,1,1.775,0,0.085,0,0,0.0055,0.0145,0.263,0,2,0.013000000000000001,0.03,9,14.5,2.5,0.025,100
+susenas_code,susenas_item,nutrient,value_before,value_after,method,source_table
+2,"Beras (beras lokal, kualitas unggul, impor)",dha_epa,0,0,zero_by_biology,none
+3,Beras ketan,dha_epa,0,0,zero_by_biology,none
+4,Jagung basah degan kulit,dha_epa,0,0,zero_by_biology,none
+5,Jagung pipilan/beras jagung/jagung titi,dha_epa,0,0,zero_by_biology,none
+5,Jagung pipilan/beras jagung/jagung titi,retinol,,0,zero_by_biology,none
+6,Tepung terigu,dha_epa,0,0,zero_by_biology,none
+7,Padi-padian lainnya,dha_epa,0,0,zero_by_biology,none
+9,Ketala pohon/singkong,dha_epa,0,0,zero_by_biology,none
+10,Ketela rambat/ubi jalar,dha_epa,0,0,zero_by_biology,none
+11,Sagu (bukan dari ketela pohon),dha_epa,0,0,zero_by_biology,none
+12,Talas/keladi,dha_epa,0,0,zero_by_biology,none
+13,Kentang,dha_epa,0,0,zero_by_biology,none
+14,Gaplek,dha_epa,0,0,zero_by_biology,none
+14,Gaplek,retinol,,0,zero_by_biology,none
+15,Umbi-umbian lainnya,dha_epa,0,0,zero_by_biology,none
+53,Daging sapi,dha_epa,0,0,zero_by_biology,none
+54,"Daging kambing, domba/biri-biri",dha_epa,0,0,zero_by_biology,none
+55,Daging babi,dha_epa,0,0,zero_by_biology,none
+56,Daging ayam ras,dha_epa,0,0,zero_by_biology,none
+57,Daging ayam kampung,dha_epa,0,0,zero_by_biology,none
+58,Daging segar lainnya,dha_epa,0,0,zero_by_biology,none
+59,Daging diawetkan lainnya,dha_epa,0,0,zero_by_biology,none
+60,"Tetelan, sandung lamur",dha_epa,0,0,zero_by_biology,none
+61,"Lainnya ( hati, jeroan, iga, kaki, buntut, kepala, dsb)",dha_epa,0,0,zero_by_biology,none
+63,Telur ayam ras,dha_epa,0,0,zero_by_biology,none
+64,Telur ayam kampung,dha_epa,0,0,zero_by_biology,none
+64,Telur ayam kampung,vitamin_c,,0,borrowed,"USDA FoodData Central, SR Legacy"
+65,Telur itik/telur itik manila,dha_epa,0,0,zero_by_biology,none
+65,Telur itik/telur itik manila,vitamin_c,,0,borrowed,"USDA FoodData Central, SR Legacy"
+66,"Telur lainnya (telur puyuh, telur asin mentah maupun matang, telur penyu, telur angsa, dsb)",dha_epa,0,0,zero_by_biology,none
+67,Susu cair pabrik,dha_epa,0,0,zero_by_biology,none
+68,Susu kental manis,dha_epa,0,0,zero_by_biology,none
+69,Susu bubuk,dha_epa,0,0,zero_by_biology,none
+70,Susu bubuk bayi,dha_epa,0,0,zero_by_biology,none
+71,Susu lainnya dan hasil lain dari susu,dha_epa,0,0,zero_by_biology,none
+73,Bayam,dha_epa,0,0,zero_by_biology,none
+74,Kangkung,dha_epa,0,0,zero_by_biology,none
+74,Kangkung,retinol,,0,zero_by_biology,none
+75,Kol/kubis,dha_epa,0,0,zero_by_biology,none
+75,Kol/kubis,retinol,,0,zero_by_biology,none
+76,Sawi putih (petsai),dha_epa,0,0,zero_by_biology,none
+77,Sawi hijau,dha_epa,0,0,zero_by_biology,none
+78,Buncis,dha_epa,0,0,zero_by_biology,none
+79,Kacang panjang,dha_epa,0,0,zero_by_biology,none
+80,"Tomat sayur, tomat ceri",dha_epa,0,0,zero_by_biology,none
+80,"Tomat sayur, tomat ceri",retinol,,0,zero_by_biology,none
+81,Wortel,dha_epa,0,0,zero_by_biology,none
+81,Wortel,retinol,,0,zero_by_biology,none
+82,Mentimun,dha_epa,0,0,zero_by_biology,none
+83,Daun ketela pohon/daun singkong,dha_epa,0,0,zero_by_biology,none
+84,Terong,dha_epa,0,0,zero_by_biology,none
+85,Tauge,dha_epa,0,0,zero_by_biology,none
+86,"Labu, labu siam, labu parang",dha_epa,0,0,zero_by_biology,none
+86,"Labu, labu siam, labu parang",retinol,,0,zero_by_biology,none
+87,Bahan sayur sop/cap cay/ kimlo (paket),energy,27,47.06,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+87,Bahan sayur sop/cap cay/ kimlo (paket),protein,1.3,1.915,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+87,Bahan sayur sop/cap cay/ kimlo (paket),fat,2,0.9700000000000001,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+87,Bahan sayur sop/cap cay/ kimlo (paket),dha_epa,0,0,zero_by_biology,none
+87,Bahan sayur sop/cap cay/ kimlo (paket),carbohydrate,1,8.476999999999999,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+87,Bahan sayur sop/cap cay/ kimlo (paket),fiber,0.3,1.795,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+87,Bahan sayur sop/cap cay/ kimlo (paket),ash,2.7,1.099,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+87,Bahan sayur sop/cap cay/ kimlo (paket),retinol,20,0,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+87,Bahan sayur sop/cap cay/ kimlo (paket),beta_carotene,,3775.390000000001,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+87,Bahan sayur sop/cap cay/ kimlo (paket),thiamin,0.1,0.1432,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+87,Bahan sayur sop/cap cay/ kimlo (paket),riboflavin,,0.1339,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+87,Bahan sayur sop/cap cay/ kimlo (paket),niacin,,0.9500000000000001,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+87,Bahan sayur sop/cap cay/ kimlo (paket),vitamin_c,0,14.19,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+87,Bahan sayur sop/cap cay/ kimlo (paket),calcium,168,75.94999999999999,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+87,Bahan sayur sop/cap cay/ kimlo (paket),copper,,0.3246000000000001,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+87,Bahan sayur sop/cap cay/ kimlo (paket),iron,1.8,1.79,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+87,Bahan sayur sop/cap cay/ kimlo (paket),phosphorus,57,57.91999999999999,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+87,Bahan sayur sop/cap cay/ kimlo (paket),potassium,,209.234,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+87,Bahan sayur sop/cap cay/ kimlo (paket),sodium,,39.28500000000001,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+87,Bahan sayur sop/cap cay/ kimlo (paket),zinc,,0.385,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+87,Bahan sayur sop/cap cay/ kimlo (paket),bdd,100,79.50000000000001,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+88,Bahan sayur asam/lodeh (paket),energy,29,87.44000000000001,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+88,Bahan sayur asam/lodeh (paket),protein,0.7,3.314999999999999,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+88,Bahan sayur asam/lodeh (paket),fat,0.6,4.468999999999999,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+88,Bahan sayur asam/lodeh (paket),dha_epa,0,0,zero_by_biology,none
+88,Bahan sayur asam/lodeh (paket),carbohydrate,5,9.498000000000001,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+88,Bahan sayur asam/lodeh (paket),fiber,0.6,3.543000000000001,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+88,Bahan sayur asam/lodeh (paket),ash,0.8,0.9150000000000003,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+88,Bahan sayur asam/lodeh (paket),retinol,14,0,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+88,Bahan sayur asam/lodeh (paket),beta_carotene,,222.28,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+88,Bahan sayur asam/lodeh (paket),thiamin,0.1,0.2367,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+88,Bahan sayur asam/lodeh (paket),riboflavin,,0.08070000000000001,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+88,Bahan sayur asam/lodeh (paket),niacin,,0.678,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+88,Bahan sayur asam/lodeh (paket),vitamin_c,0,18.88,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+88,Bahan sayur asam/lodeh (paket),calcium,40,49.73,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+88,Bahan sayur asam/lodeh (paket),copper,,0.1991,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+88,Bahan sayur asam/lodeh (paket),iron,3.1,1.454,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+88,Bahan sayur asam/lodeh (paket),phosphorus,61,77.83000000000003,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+88,Bahan sayur asam/lodeh (paket),potassium,,260.633,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+88,Bahan sayur asam/lodeh (paket),sodium,,69.07799999999999,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+88,Bahan sayur asam/lodeh (paket),zinc,,0.6680000000000001,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+88,Bahan sayur asam/lodeh (paket),bdd,100,90.92,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+89,Nangka muda,dha_epa,0,0,zero_by_biology,none
+89,Nangka muda,retinol,,0,zero_by_biology,none
+90,Pepaya muda,dha_epa,0,0,zero_by_biology,none
+90,Pepaya muda,retinol,,0,zero_by_biology,none
+91,Jengkol,dha_epa,0,0,zero_by_biology,none
+91,Jengkol,retinol,,0,zero_by_biology,none
+91,Jengkol,beta_carotene,,373,borrowed,Malaysian Food Composition Database 1997 (MyFCD)
+92,Bawang merah,dha_epa,0,0,zero_by_biology,none
+92,Bawang merah,retinol,,0,zero_by_biology,none
+93,Bawang putih,dha_epa,0,0,zero_by_biology,none
+93,Bawang putih,retinol,,0,zero_by_biology,none
+94,Cabe merah,dha_epa,0,0,zero_by_biology,none
+94,Cabe merah,retinol,,0,zero_by_biology,none
+95,Cabe hijau,dha_epa,0,0,zero_by_biology,none
+95,Cabe hijau,retinol,,0,zero_by_biology,none
+96,Cabe rawit,dha_epa,0,0,zero_by_biology,none
+96,Cabe rawit,retinol,,0,zero_by_biology,none
+97,Sayur-sayuran lainnya,dha_epa,0,0,zero_by_biology,none
+99,Kacang tanah tanpa kulit,dha_epa,0,0,zero_by_biology,none
+100,Kacang kedele,dha_epa,0,0,zero_by_biology,none
+100,Kacang kedele,retinol,,0,zero_by_biology,none
+100,Kacang kedele,vitamin_c,,6,borrowed,"USDA FoodData Central, SR Legacy"
+101,Kacang lainnya,dha_epa,0,0,zero_by_biology,none
+102,Tahu,dha_epa,0,0,zero_by_biology,none
+102,Tahu,retinol,,0,zero_by_biology,none
+102,Tahu,vitamin_c,,0.1,borrowed,"USDA FoodData Central, SR Legacy"
+103,Tempe,dha_epa,0,0,zero_by_biology,none
+104,Oncom,dha_epa,0,0,zero_by_biology,none
+104,Oncom,beta_carotene,,0,borrowed,TKPI 2020
+104,Oncom,copper,,0.57,borrowed,TKPI 2020
+104,Oncom,potassium,,234,borrowed,TKPI 2020
+104,Oncom,sodium,,9,borrowed,TKPI 2020
+104,Oncom,zinc,,1.7,borrowed,TKPI 2020
+105,Hasil lain dari kacang-kacangan,dha_epa,0,0,zero_by_biology,none
+107,"Jeruk, jeruk bali",dha_epa,0,0,zero_by_biology,none
+107,"Jeruk, jeruk bali",retinol,,0,zero_by_biology,none
+108,Mangga,dha_epa,0,0,zero_by_biology,none
+109,Apel,dha_epa,0,0,zero_by_biology,none
+109,Apel,retinol,,0,zero_by_biology,none
+110,Rambutan,dha_epa,0,0,zero_by_biology,none
+110,Rambutan,retinol,,0,zero_by_biology,none
+111,"Duku, langsat",dha_epa,0,0,zero_by_biology,none
+111,"Duku, langsat",retinol,,0,zero_by_biology,none
+112,Durian,dha_epa,0,0,zero_by_biology,none
+112,Durian,retinol,,0,zero_by_biology,none
+113,Salak,dha_epa,0,0,zero_by_biology,none
+114,Pisang ambon,dha_epa,0,0,zero_by_biology,none
+114,Pisang ambon,retinol,,0,zero_by_biology,none
+115,Pisang lainnya,dha_epa,0,0,zero_by_biology,none
+116,Pepaya,dha_epa,0,0,zero_by_biology,none
+117,Semangka,dha_epa,0,0,zero_by_biology,none
+117,Semangka,retinol,,0,zero_by_biology,none
+118,Tomat buah,dha_epa,0,0,zero_by_biology,none
+118,Tomat buah,retinol,,0,zero_by_biology,none
+119,Buah-buahan lainnya,dha_epa,0,0,zero_by_biology,none
+121,Minyak kelapa,dha_epa,0,0,zero_by_biology,none
+122,"Minyak goreng (kelapa sawit, bunga matahari)",dha_epa,0,0,zero_by_biology,none
+122,"Minyak goreng (kelapa sawit, bunga matahari)",retinol,,0,zero_by_biology,none
+123,Kelapa (tidak termasuk santan instan),dha_epa,0,0,zero_by_biology,none
+124,Minyak dan kelapa lainnya,dha_epa,0,0,zero_by_composition,none
+126,Gula pasir,dha_epa,0,0,zero_by_biology,none
+127,"Gula merah, gula air (pohom aren, kelapa, lontar)",dha_epa,0,0,zero_by_biology,none
+128,Teh bubuk,dha_epa,0,0,zero_by_biology,none
+129,Teh celup (sachet),dha_epa,0,0,zero_by_biology,none
+130,"Kopi (bubuk, biji)",energy,,419,borrowed,"TACO, Tabela Brasileira de Composicao de Alimentos, 4th ed. (NEPA/UNICAMP 2011), Tabela 1"
+130,"Kopi (bubuk, biji)",protein,,14.7,borrowed,"TACO, Tabela Brasileira de Composicao de Alimentos, 4th ed. (NEPA/UNICAMP 2011), Tabela 1"
+130,"Kopi (bubuk, biji)",fat,,11.9,borrowed,"TACO, Tabela Brasileira de Composicao de Alimentos, 4th ed. (NEPA/UNICAMP 2011), Tabela 1"
+130,"Kopi (bubuk, biji)",dha_epa,,0,zero_by_biology,none
+130,"Kopi (bubuk, biji)",carbohydrate,,65.8,borrowed,"TACO, Tabela Brasileira de Composicao de Alimentos, 4th ed. (NEPA/UNICAMP 2011), Tabela 1"
+130,"Kopi (bubuk, biji)",fiber,,51.2,borrowed,"TACO, Tabela Brasileira de Composicao de Alimentos, 4th ed. (NEPA/UNICAMP 2011), Tabela 1"
+130,"Kopi (bubuk, biji)",ash,,4.7,borrowed,"TACO, Tabela Brasileira de Composicao de Alimentos, 4th ed. (NEPA/UNICAMP 2011), Tabela 1"
+130,"Kopi (bubuk, biji)",retinol,,0,zero_by_biology,none
+130,"Kopi (bubuk, biji)",beta_carotene,,0,borrowed,"USDA FoodData Central, SR Legacy"
+130,"Kopi (bubuk, biji)",thiamin,,0,borrowed,"TACO, Tabela Brasileira de Composicao de Alimentos, 4th ed. (NEPA/UNICAMP 2011), Tabela 1"
+130,"Kopi (bubuk, biji)",riboflavin,,0,borrowed,"TACO, Tabela Brasileira de Composicao de Alimentos, 4th ed. (NEPA/UNICAMP 2011), Tabela 1"
+130,"Kopi (bubuk, biji)",niacin,,11.89,borrowed,"TACO, Tabela Brasileira de Composicao de Alimentos, 4th ed. (NEPA/UNICAMP 2011), Tabela 1"
+130,"Kopi (bubuk, biji)",vitamin_c,,0,borrowed,"TACO, Tabela Brasileira de Composicao de Alimentos, 4th ed. (NEPA/UNICAMP 2011), Tabela 1"
+130,"Kopi (bubuk, biji)",calcium,,107,borrowed,"TACO, Tabela Brasileira de Composicao de Alimentos, 4th ed. (NEPA/UNICAMP 2011), Tabela 1"
+130,"Kopi (bubuk, biji)",copper,,1.3,borrowed,"TACO, Tabela Brasileira de Composicao de Alimentos, 4th ed. (NEPA/UNICAMP 2011), Tabela 1"
+130,"Kopi (bubuk, biji)",iron,,8.1,borrowed,"TACO, Tabela Brasileira de Composicao de Alimentos, 4th ed. (NEPA/UNICAMP 2011), Tabela 1"
+130,"Kopi (bubuk, biji)",phosphorus,,169,borrowed,"TACO, Tabela Brasileira de Composicao de Alimentos, 4th ed. (NEPA/UNICAMP 2011), Tabela 1"
+130,"Kopi (bubuk, biji)",potassium,,1609,borrowed,"TACO, Tabela Brasileira de Composicao de Alimentos, 4th ed. (NEPA/UNICAMP 2011), Tabela 1"
+130,"Kopi (bubuk, biji)",sodium,,1,borrowed,"TACO, Tabela Brasileira de Composicao de Alimentos, 4th ed. (NEPA/UNICAMP 2011), Tabela 1"
+130,"Kopi (bubuk, biji)",zinc,,0.5,borrowed,"TACO, Tabela Brasileira de Composicao de Alimentos, 4th ed. (NEPA/UNICAMP 2011), Tabela 1"
+130,"Kopi (bubuk, biji)",bdd,,100,borrowed,none
+131,Kopi instan (sachet),dha_epa,0,0,zero_by_biology,none
+131,Kopi instan (sachet),retinol,,0,zero_by_biology,none
+132,Bahan minuman lainnya,dha_epa,0,0,zero_by_biology,none
+134,Garam,energy,,0,borrowed,"USDA FoodData Central, Foundation"
+134,Garam,protein,,0,borrowed,"USDA FoodData Central, Foundation"
+134,Garam,fat,,0,borrowed,"USDA FoodData Central, Foundation"
+134,Garam,dha_epa,,0,zero_by_biology,none
+134,Garam,carbohydrate,,0,borrowed,"USDA FoodData Central, Foundation"
+134,Garam,fiber,,0,borrowed,"USDA FoodData Central, Foundation"
+134,Garam,ash,,99,borrowed,"USDA FoodData Central, Foundation"
+134,Garam,retinol,,0,borrowed,"USDA FoodData Central, Foundation"
+134,Garam,beta_carotene,,0,borrowed,"USDA FoodData Central, Foundation"
+134,Garam,thiamin,,0,borrowed,"USDA FoodData Central, Foundation"
+134,Garam,riboflavin,,0,borrowed,"USDA FoodData Central, Foundation"
+134,Garam,niacin,,0,borrowed,"USDA FoodData Central, Foundation"
+134,Garam,vitamin_c,,0,borrowed,"USDA FoodData Central, Foundation"
+134,Garam,calcium,,50,borrowed,"USDA FoodData Central, Foundation"
+134,Garam,copper,,0,borrowed,"USDA FoodData Central, Foundation"
+134,Garam,iron,,0,borrowed,"USDA FoodData Central, Foundation"
+134,Garam,phosphorus,,0,borrowed,"USDA FoodData Central, Foundation"
+134,Garam,potassium,,2,borrowed,"USDA FoodData Central, Foundation"
+134,Garam,sodium,,38700,borrowed,"USDA FoodData Central, Foundation"
+134,Garam,zinc,,0,borrowed,"USDA FoodData Central, Foundation"
+134,Garam,bdd,,100,borrowed,"USDA FoodData Central, Foundation"
+135,Kemiri,dha_epa,0,0,zero_by_biology,none
+135,Kemiri,retinol,,0,zero_by_biology,none
+136,Ketumbar/jinten,dha_epa,0,0,zero_by_biology,none
+136,Ketumbar/jinten,retinol,,0,zero_by_biology,none
+137,Merica/lada,dha_epa,0,0,zero_by_biology,none
+137,Merica/lada,retinol,,0,zero_by_biology,none
+137,Merica/lada,vitamin_c,,0,borrowed,"USDA FoodData Central, SR Legacy"
+138,Asam,dha_epa,0,0,zero_by_biology,none
+138,Asam,retinol,,0,zero_by_biology,none
+139,Terasi/petis,dha_epa,0,0,zero_by_composition,none
+139,Terasi/petis,retinol,,437,borrowed,Malaysian Food Composition Database 1997 (MyFCD)
+140,Kecap,dha_epa,0,0,zero_by_biology,none
+140,Kecap,beta_carotene,,0,borrowed,"USDA FoodData Central, SR Legacy"
+140,Kecap,riboflavin,,0.165,borrowed,"USDA FoodData Central, SR Legacy"
+140,Kecap,niacin,,2.2,borrowed,"USDA FoodData Central, SR Legacy"
+140,Kecap,potassium,,435,borrowed,"USDA FoodData Central, SR Legacy"
+140,Kecap,zinc,,0.87,borrowed,"USDA FoodData Central, SR Legacy"
+141,Penyedap masakan/vetsin,energy,,282,borrowed,"Ajinomoto North America, Monosodium Glutamate (MSG) Nutritional Information, Form 5092 (06/19 form; the 08/12 form prints identical values)"
+141,Penyedap masakan/vetsin,protein,,0,borrowed,"Ajinomoto North America, Monosodium Glutamate (MSG) Nutritional Information, Form 5092 (06/19 form; the 08/12 form prints identical values)"
+141,Penyedap masakan/vetsin,fat,,0,borrowed,"Ajinomoto North America, Monosodium Glutamate (MSG) Nutritional Information, Form 5092 (06/19 form; the 08/12 form prints identical values)"
+141,Penyedap masakan/vetsin,dha_epa,,0,zero_by_biology,none
+141,Penyedap masakan/vetsin,carbohydrate,,0,borrowed,"Ajinomoto North America, Monosodium Glutamate (MSG) Nutritional Information, Form 5092 (06/19 form; the 08/12 form prints identical values)"
+141,Penyedap masakan/vetsin,fiber,,0,borrowed,"Ajinomoto North America, Monosodium Glutamate (MSG) Nutritional Information, Form 5092 (06/19 form; the 08/12 form prints identical values)"
+141,Penyedap masakan/vetsin,ash,,27.8,borrowed,"Ajinomoto North America, Monosodium Glutamate (MSG) Nutritional Information, Form 5092 (06/19 form; the 08/12 form prints identical values)"
+141,Penyedap masakan/vetsin,retinol,,0,borrowed,"Ajinomoto North America, Monosodium Glutamate (MSG) Nutritional Information, Form 5092 (06/19 form; the 08/12 form prints identical values)"
+141,Penyedap masakan/vetsin,beta_carotene,,0,borrowed,"Ajinomoto North America, Monosodium Glutamate (MSG) Nutritional Information, Form 5092 (06/19 form; the 08/12 form prints identical values)"
+141,Penyedap masakan/vetsin,thiamin,,0,zero_by_composition,"JECFA specification (FAO JECFA Monographs 1, 2006) and Commission Regulation (EU) No 231/2012, as tabulated in EFSA Journal 2017;15(7):4910"
+141,Penyedap masakan/vetsin,riboflavin,,0,zero_by_composition,"JECFA specification (FAO JECFA Monographs 1, 2006) and Commission Regulation (EU) No 231/2012, as tabulated in EFSA Journal 2017;15(7):4910"
+141,Penyedap masakan/vetsin,niacin,,0,zero_by_composition,"JECFA specification (FAO JECFA Monographs 1, 2006) and Commission Regulation (EU) No 231/2012, as tabulated in EFSA Journal 2017;15(7):4910"
+141,Penyedap masakan/vetsin,vitamin_c,,0,borrowed,"Ajinomoto North America, Monosodium Glutamate (MSG) Nutritional Information, Form 5092 (06/19 form; the 08/12 form prints identical values)"
+141,Penyedap masakan/vetsin,calcium,,21.2,borrowed,"Ajinomoto North America, Monosodium Glutamate (MSG) Nutritional Information, Form 5092 (06/19 form; the 08/12 form prints identical values)"
+141,Penyedap masakan/vetsin,copper,,0,zero_by_composition,"JECFA specification (FAO JECFA Monographs 1, 2006) and Commission Regulation (EU) No 231/2012, as tabulated in EFSA Journal 2017;15(7):4910"
+141,Penyedap masakan/vetsin,iron,,0.4,borrowed,"Ajinomoto North America, Monosodium Glutamate (MSG) Nutritional Information, Form 5092 (06/19 form; the 08/12 form prints identical values)"
+141,Penyedap masakan/vetsin,phosphorus,,1.3,borrowed,"Ajinomoto North America, Monosodium Glutamate (MSG) Nutritional Information, Form 5092 (06/19 form; the 08/12 form prints identical values)"
+141,Penyedap masakan/vetsin,potassium,,0.8,borrowed,"Ajinomoto North America, Monosodium Glutamate (MSG) Nutritional Information, Form 5092 (06/19 form; the 08/12 form prints identical values)"
+141,Penyedap masakan/vetsin,sodium,,12300,borrowed,"Ajinomoto North America, Monosodium Glutamate (MSG) Nutritional Information, Form 5092 (06/19 form; the 08/12 form prints identical values)"
+141,Penyedap masakan/vetsin,zinc,,0,zero_by_composition,"JECFA specification (FAO JECFA Monographs 1, 2006) and Commission Regulation (EU) No 231/2012, as tabulated in EFSA Journal 2017;15(7):4910"
+141,Penyedap masakan/vetsin,bdd,,100,borrowed,none
+142,Sambal jadi,energy,153.10000000000002,127.42,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+142,Sambal jadi,protein,3.8,1.059,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+142,Sambal jadi,fat,5.5,6.271,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+142,Sambal jadi,dha_epa,0,0,zero_by_biology,none
+142,Sambal jadi,carbohydrate,18.1,16.616,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+142,Sambal jadi,fiber,8,1.116,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+142,Sambal jadi,ash,0,3.548999999999999,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+142,Sambal jadi,retinol,0,0,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+142,Sambal jadi,beta_carotene,0,4169.309999999999,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+142,Sambal jadi,thiamin,0.1,0.0491,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+142,Sambal jadi,riboflavin,0.3,0.0644,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+142,Sambal jadi,niacin,2.8,1.629,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+142,Sambal jadi,vitamin_c,24,16.17,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+142,Sambal jadi,calcium,47,22.54,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+142,Sambal jadi,copper,,0.09450000000000001,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+142,Sambal jadi,iron,2.5,0.472,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+142,Sambal jadi,phosphorus,,35.31,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+142,Sambal jadi,potassium,,213.1895,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+142,Sambal jadi,sodium,,1177.324,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+142,Sambal jadi,zinc,0.8,0.17,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+142,Sambal jadi,bdd,100,91.15,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+143,Saus tomat,dha_epa,0,0,zero_by_biology,none
+143,Saus tomat,retinol,,0,zero_by_biology,none
+144,"Bumbu masak jadi/kemasan, bumbu racikan",energy,,209.2,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+144,"Bumbu masak jadi/kemasan, bumbu racikan",protein,,3.943,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+144,"Bumbu masak jadi/kemasan, bumbu racikan",fat,,14.499,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+144,"Bumbu masak jadi/kemasan, bumbu racikan",dha_epa,,0,zero_by_biology,none
+144,"Bumbu masak jadi/kemasan, bumbu racikan",carbohydrate,,16.308,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+144,"Bumbu masak jadi/kemasan, bumbu racikan",fiber,,2.734,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+144,"Bumbu masak jadi/kemasan, bumbu racikan",ash,,1.343,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+144,"Bumbu masak jadi/kemasan, bumbu racikan",retinol,,0,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+144,"Bumbu masak jadi/kemasan, bumbu racikan",beta_carotene,,2417.23,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+144,"Bumbu masak jadi/kemasan, bumbu racikan",thiamin,,0.0811,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+144,"Bumbu masak jadi/kemasan, bumbu racikan",riboflavin,,0.0846,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+144,"Bumbu masak jadi/kemasan, bumbu racikan",niacin,,0.9480000000000001,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+144,"Bumbu masak jadi/kemasan, bumbu racikan",vitamin_c,,11.71,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+144,"Bumbu masak jadi/kemasan, bumbu racikan",calcium,,65.34,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+144,"Bumbu masak jadi/kemasan, bumbu racikan",copper,,0.1514,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+144,"Bumbu masak jadi/kemasan, bumbu racikan",iron,,1.909,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+144,"Bumbu masak jadi/kemasan, bumbu racikan",phosphorus,,76.96,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+144,"Bumbu masak jadi/kemasan, bumbu racikan",potassium,,344.188,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+144,"Bumbu masak jadi/kemasan, bumbu racikan",sodium,,20.74,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+144,"Bumbu masak jadi/kemasan, bumbu racikan",zinc,,0.4470000000000001,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+144,"Bumbu masak jadi/kemasan, bumbu racikan",bdd,,91.08,recipe,"TKPI 2020 raw ingredients, share-weighted (sheet Recipes)"
+145,"Bumbu dapur lainnya (pala, jahe, kunyit, dsb)",dha_epa,0,0,zero_by_biology,none
+147,Mie instan,energy,339,440,borrowed,"USDA FoodData Central, SR Legacy"
+147,Mie instan,protein,10,10.2,borrowed,"USDA FoodData Central, SR Legacy"
+147,Mie instan,fat,1.7,17.6,borrowed,"USDA FoodData Central, SR Legacy"
+147,Mie instan,dha_epa,0,0,zero_by_biology,none
+147,Mie instan,carbohydrate,6.3,60.3,borrowed,"USDA FoodData Central, SR Legacy"
+147,Mie instan,fiber,0.4,2.9,borrowed,"USDA FoodData Central, SR Legacy"
+147,Mie instan,ash,1.4,5.45,borrowed,"USDA FoodData Central, SR Legacy"
+147,Mie instan,retinol,,0,borrowed,"USDA FoodData Central, SR Legacy"
+147,Mie instan,beta_carotene,,6,borrowed,"USDA FoodData Central, SR Legacy"
+147,Mie instan,thiamin,0,0.448,borrowed,"USDA FoodData Central, SR Legacy"
+147,Mie instan,riboflavin,0.08,0.255,borrowed,"USDA FoodData Central, SR Legacy"
+147,Mie instan,niacin,2.2,5.4,borrowed,"USDA FoodData Central, SR Legacy"
+147,Mie instan,vitamin_c,0,0.3,borrowed,"USDA FoodData Central, SR Legacy"
+147,Mie instan,calcium,31,21,borrowed,"USDA FoodData Central, SR Legacy"
+147,Mie instan,copper,0.29,0.126,borrowed,"USDA FoodData Central, SR Legacy"
+147,Mie instan,iron,3.9,4.11,borrowed,"USDA FoodData Central, SR Legacy"
+147,Mie instan,phosphorus,143,115,borrowed,"USDA FoodData Central, SR Legacy"
+147,Mie instan,potassium,83,181,borrowed,"USDA FoodData Central, SR Legacy"
+147,Mie instan,sodium,760,1860,borrowed,"USDA FoodData Central, SR Legacy"
+147,Mie instan,zinc,1.9,0.6,borrowed,"USDA FoodData Central, SR Legacy"
+147,Mie instan,bdd,100,100,borrowed,none
+148,Kerupuk,dha_epa,0,0,zero_by_composition,none
+149,Bubur bayi kemasan,energy,396.80000000000007,390,borrowed,"USDA FoodData Central, SR Legacy"
+149,Bubur bayi kemasan,protein,8.9,6.65,borrowed,"USDA FoodData Central, SR Legacy"
+149,Bubur bayi kemasan,fat,4.4,2.19,borrowed,"USDA FoodData Central, SR Legacy"
+149,Bubur bayi kemasan,dha_epa,0,0,zero_by_biology,none
+149,Bubur bayi kemasan,carbohydrate,80.4,83.14,borrowed,"USDA FoodData Central, SR Legacy"
+149,Bubur bayi kemasan,fiber,0,1.3,borrowed,"USDA FoodData Central, SR Legacy"
+149,Bubur bayi kemasan,ash,2.7,2.89,borrowed,"USDA FoodData Central, SR Legacy"
+149,Bubur bayi kemasan,retinol,0,0,borrowed,"USDA FoodData Central, SR Legacy"
+149,Bubur bayi kemasan,beta_carotene,0,0,borrowed,"USDA FoodData Central, SR Legacy"
+149,Bubur bayi kemasan,thiamin,0,1.195,borrowed,"USDA FoodData Central, SR Legacy"
+149,Bubur bayi kemasan,riboflavin,0,1.459,borrowed,"USDA FoodData Central, SR Legacy"
+149,Bubur bayi kemasan,niacin,0,23.006,borrowed,"USDA FoodData Central, SR Legacy"
+149,Bubur bayi kemasan,vitamin_c,0,2.4,borrowed,"USDA FoodData Central, SR Legacy"
+149,Bubur bayi kemasan,calcium,337,860,borrowed,"USDA FoodData Central, SR Legacy"
+149,Bubur bayi kemasan,copper,,0.231,borrowed,"USDA FoodData Central, SR Legacy"
+149,Bubur bayi kemasan,iron,10.4,53.01,borrowed,"USDA FoodData Central, SR Legacy"
+149,Bubur bayi kemasan,phosphorus,,273,borrowed,"USDA FoodData Central, SR Legacy"
+149,Bubur bayi kemasan,potassium,,281,borrowed,"USDA FoodData Central, SR Legacy"
+149,Bubur bayi kemasan,sodium,,32,borrowed,"USDA FoodData Central, SR Legacy"
+149,Bubur bayi kemasan,zinc,0,10.92,borrowed,"USDA FoodData Central, SR Legacy"
+149,Bubur bayi kemasan,bdd,100,100,borrowed,none
+150,Lainnya,dha_epa,0,0,zero_by_biology,none
+152,Roti tawar,dha_epa,0,0,zero_by_biology,none
+153,"Roti manis, roti lainnya",dha_epa,0,0,zero_by_biology,none
+153,"Roti manis, roti lainnya",fiber,,3.1,borrowed,"USDA FoodData Central, SR Legacy"
+153,"Roti manis, roti lainnya",copper,,0.097,borrowed,"USDA FoodData Central, SR Legacy"
+154,"Kue kering, biskuit, semprong",dha_epa,0,0,zero_by_biology,none
+155,"Kue basah (kue lapis, bika ambon, lemper, dsb)",dha_epa,0,0,zero_by_biology,none
+156,Makanan gorengan,dha_epa,0,0,zero_by_biology,none
+157,Bubur kacang hijau,energy,148.5,133.83,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+157,Bubur kacang hijau,protein,3.1,4.766999999999999,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+157,Bubur kacang hijau,fat,3.5,4.409999999999999,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+157,Bubur kacang hijau,dha_epa,0,0,zero_by_biology,none
+157,Bubur kacang hijau,carbohydrate,24.7,19.965,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+157,Bubur kacang hijau,fiber,2.9,1.47,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+157,Bubur kacang hijau,ash,0,0.8,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+157,Bubur kacang hijau,retinol,0,0,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+157,Bubur kacang hijau,beta_carotene,0,28.08,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+157,Bubur kacang hijau,thiamin,0.1,0.085,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+157,Bubur kacang hijau,riboflavin,0,0.0525,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+157,Bubur kacang hijau,niacin,0.2,0.388,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+157,Bubur kacang hijau,vitamin_c,0,2.04,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+157,Bubur kacang hijau,calcium,259,47.8184,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+157,Bubur kacang hijau,copper,,0.3838,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+157,Bubur kacang hijau,iron,1.3,1.742,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+157,Bubur kacang hijau,phosphorus,,64.94,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+157,Bubur kacang hijau,potassium,,203.023,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+157,Bubur kacang hijau,sodium,,11.76,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+157,Bubur kacang hijau,zinc,0.5,0.619,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+157,Bubur kacang hijau,bdd,100,99.97,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+158,"Gado-gado, ketoprak, pecel",energy,145,144.81,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+158,"Gado-gado, ketoprak, pecel",protein,7,7.992,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+158,"Gado-gado, ketoprak, pecel",fat,5.45,5.99,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+158,"Gado-gado, ketoprak, pecel",dha_epa,0,0,zero_by_biology,none
+158,"Gado-gado, ketoprak, pecel",carbohydrate,17,16.184,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+158,"Gado-gado, ketoprak, pecel",fiber,2,1.12,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+158,"Gado-gado, ketoprak, pecel",ash,2.05,1.923,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+158,"Gado-gado, ketoprak, pecel",retinol,3,4.27,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+158,"Gado-gado, ketoprak, pecel",beta_carotene,,973.6999999999999,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+158,"Gado-gado, ketoprak, pecel",thiamin,0.07500000000000001,0.152,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+158,"Gado-gado, ketoprak, pecel",riboflavin,,0.2018,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+158,"Gado-gado, ketoprak, pecel",niacin,,2.650999999999999,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+158,"Gado-gado, ketoprak, pecel",vitamin_c,0.5,6.66,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+158,"Gado-gado, ketoprak, pecel",calcium,227,94.10000000000001,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+158,"Gado-gado, ketoprak, pecel",copper,,0.3287,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+158,"Gado-gado, ketoprak, pecel",iron,5.45,2.009,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+158,"Gado-gado, ketoprak, pecel",phosphorus,134.5,127.73,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+158,"Gado-gado, ketoprak, pecel",potassium,,148.631,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+158,"Gado-gado, ketoprak, pecel",sodium,,414.777,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+158,"Gado-gado, ketoprak, pecel",zinc,,0.7680000000000001,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+158,"Gado-gado, ketoprak, pecel",bdd,100,90.64999999999999,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+159,Nasi campur/rames,dha_epa,0,0,zero_by_biology,none
+160,Nasi goreng,energy,178.00000000000003,196.39,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+160,Nasi goreng,protein,2.6,3.549,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+160,Nasi goreng,fat,7.4,7.469999999999999,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+160,Nasi goreng,dha_epa,0,0,zero_by_biology,none
+160,Nasi goreng,carbohydrate,24.6,27.984,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+160,Nasi goreng,fiber,1.3,0.482,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+160,Nasi goreng,ash,0,1.437,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+160,Nasi goreng,retinol,0,6.100000000000001,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+160,Nasi goreng,beta_carotene,0,1785.35,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+160,Nasi goreng,thiamin,0.1,0.0732,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+160,Nasi goreng,riboflavin,0.1,0.1186,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+160,Nasi goreng,niacin,0,1.817,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+160,Nasi goreng,vitamin_c,19,2.76,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+160,Nasi goreng,calcium,7,34.61,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+160,Nasi goreng,copper,,0.1376,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+160,Nasi goreng,iron,0.6,0.8450000000000002,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+160,Nasi goreng,phosphorus,,53.66,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+160,Nasi goreng,potassium,,76.553,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+160,Nasi goreng,sodium,,406.614,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+160,Nasi goreng,zinc,0.4,0.544,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+160,Nasi goreng,bdd,100,96.46000000000001,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+161,Nasi putih,dha_epa,0,0,zero_by_biology,none
+162,Lontong/ketupat sayur,energy,,143.22,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+162,Lontong/ketupat sayur,protein,,3.243,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+162,Lontong/ketupat sayur,fat,,6.296,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+162,Lontong/ketupat sayur,dha_epa,,0,zero_by_biology,none
+162,Lontong/ketupat sayur,carbohydrate,,18.17400000000001,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+162,Lontong/ketupat sayur,fiber,,1.044,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+162,Lontong/ketupat sayur,ash,,1.383,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+162,Lontong/ketupat sayur,retinol,,6.100000000000001,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+162,Lontong/ketupat sayur,beta_carotene,,433.51,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+162,Lontong/ketupat sayur,thiamin,,0.06979999999999999,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+162,Lontong/ketupat sayur,riboflavin,,0.08760000000000003,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+162,Lontong/ketupat sayur,niacin,,1.222,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+162,Lontong/ketupat sayur,vitamin_c,,3.98,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+162,Lontong/ketupat sayur,calcium,,27.90366,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+162,Lontong/ketupat sayur,copper,,0.1048,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+162,Lontong/ketupat sayur,iron,,0.7560000000000002,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+162,Lontong/ketupat sayur,phosphorus,,50.38,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+162,Lontong/ketupat sayur,potassium,,114.518,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+162,Lontong/ketupat sayur,sodium,,406.098,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+162,Lontong/ketupat sayur,zinc,,0.519,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+162,Lontong/ketupat sayur,bdd,,95.9,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+163,"Soto, gule, sop, rawon, cincang",dha_epa,0,0,zero_by_composition,none
+164,"Sayur matang (ditumis, disantan, dsb)",dha_epa,0,0,zero_by_biology,none
+165,"Sate, tongseng",energy,245.33333333333337,201.42,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+165,"Sate, tongseng",protein,15.833333333333334,12.059,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+165,"Sate, tongseng",fat,12.966666666666669,14.575,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+165,"Sate, tongseng",dha_epa,0,0,zero_by_biology,none
+165,"Sate, tongseng",carbohydrate,15.933333333333334,6.78,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+165,"Sate, tongseng",fiber,1,0.8490000000000001,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+165,"Sate, tongseng",ash,3.0666666666666664,5.572999999999999,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+165,"Sate, tongseng",retinol,133,35.02,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+165,"Sate, tongseng",beta_carotene,0.6666666666666667,1177.79,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+165,"Sate, tongseng",thiamin,0.06,0.1043,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+165,"Sate, tongseng",riboflavin,0.02,0.1785,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+165,"Sate, tongseng",niacin,0,4.162000000000001,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+165,"Sate, tongseng",vitamin_c,0,4.4,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+165,"Sate, tongseng",calcium,122.66666666666669,37.57,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+165,"Sate, tongseng",copper,0.2,0.684,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+165,"Sate, tongseng",iron,6.1000000000000005,2.008,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+165,"Sate, tongseng",phosphorus,204.66666666666663,125.09,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+165,"Sate, tongseng",potassium,199,275.978,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+165,"Sate, tongseng",sodium,576,924.782,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+165,"Sate, tongseng",zinc,0.45,2.234,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+165,"Sate, tongseng",bdd,94.13333333333334,91.19999999999999,recipe,"TKPI 2020 raw ingredients (with table salt), share-weighted (sheet Recipes)"
+166,"Mie bakso, mie rebus, mie goreng",energy,109.65,151.76,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+166,"Mie bakso, mie rebus, mie goreng",protein,5.75,5.343999999999999,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+166,"Mie bakso, mie rebus, mie goreng",fat,3.45,6.154999999999999,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+166,"Mie bakso, mie rebus, mie goreng",dha_epa,0,0,zero_by_biology,none
+166,"Mie bakso, mie rebus, mie goreng",carbohydrate,13.45,4.669,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+166,"Mie bakso, mie rebus, mie goreng",fiber,0.8999999999999999,0.3500000000000001,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+166,"Mie bakso, mie rebus, mie goreng",ash,0.8,2.297,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+166,"Mie bakso, mie rebus, mie goreng",retinol,28.35,17.07,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+166,"Mie bakso, mie rebus, mie goreng",beta_carotene,0,689.5099999999999,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+166,"Mie bakso, mie rebus, mie goreng",thiamin,0.505,0.0267,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+166,"Mie bakso, mie rebus, mie goreng",riboflavin,0.02,0.09230000000000003,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+166,"Mie bakso, mie rebus, mie goreng",niacin,0.2,1.318,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+166,"Mie bakso, mie rebus, mie goreng",vitamin_c,0,6.77,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+166,"Mie bakso, mie rebus, mie goreng",calcium,274,36.8356,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+166,"Mie bakso, mie rebus, mie goreng",copper,,0.3691,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+166,"Mie bakso, mie rebus, mie goreng",iron,1.85,1.639,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+166,"Mie bakso, mie rebus, mie goreng",phosphorus,,73.78,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+166,"Mie bakso, mie rebus, mie goreng",potassium,,110.543,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+166,"Mie bakso, mie rebus, mie goreng",sodium,,626.9960000000001,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+166,"Mie bakso, mie rebus, mie goreng",zinc,0.5,0.8380000000000001,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+166,"Mie bakso, mie rebus, mie goreng",bdd,100,95.78,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+167,Mie instan (jadi),energy,361.79,66,recipe,"USDA SR Legacy dry noodle (with water), share-weighted (sheet Recipes)"
+167,Mie instan (jadi),protein,10.3,1.53,recipe,"USDA SR Legacy dry noodle (with water), share-weighted (sheet Recipes)"
+167,Mie instan (jadi),fat,1.91,2.64,recipe,"USDA SR Legacy dry noodle (with water), share-weighted (sheet Recipes)"
+167,Mie instan (jadi),dha_epa,0,0,zero_by_biology,none
+167,Mie instan (jadi),carbohydrate,75,9.045,recipe,"USDA SR Legacy dry noodle (with water), share-weighted (sheet Recipes)"
+167,Mie instan (jadi),fiber,1.7,0.435,recipe,"USDA SR Legacy dry noodle (with water), share-weighted (sheet Recipes)"
+167,Mie instan (jadi),ash,0,0.8175,recipe,"USDA SR Legacy dry noodle (with water), share-weighted (sheet Recipes)"
+167,Mie instan (jadi),retinol,0,0,recipe,"USDA SR Legacy dry noodle (with water), share-weighted (sheet Recipes)"
+167,Mie instan (jadi),beta_carotene,0,0.8999999999999999,recipe,"USDA SR Legacy dry noodle (with water), share-weighted (sheet Recipes)"
+167,Mie instan (jadi),thiamin,0.5,0.0672,recipe,"USDA SR Legacy dry noodle (with water), share-weighted (sheet Recipes)"
+167,Mie instan (jadi),riboflavin,0,0.03825,recipe,"USDA SR Legacy dry noodle (with water), share-weighted (sheet Recipes)"
+167,Mie instan (jadi),niacin,0,0.81,recipe,"USDA SR Legacy dry noodle (with water), share-weighted (sheet Recipes)"
+167,Mie instan (jadi),vitamin_c,0,0.045,recipe,"USDA SR Legacy dry noodle (with water), share-weighted (sheet Recipes)"
+167,Mie instan (jadi),calcium,15,3.9269,recipe,"USDA SR Legacy dry noodle (with water), share-weighted (sheet Recipes)"
+167,Mie instan (jadi),copper,,0.0189,recipe,"USDA SR Legacy dry noodle (with water), share-weighted (sheet Recipes)"
+167,Mie instan (jadi),iron,10.7,0.6165,recipe,"USDA SR Legacy dry noodle (with water), share-weighted (sheet Recipes)"
+167,Mie instan (jadi),phosphorus,,17.25,recipe,"USDA SR Legacy dry noodle (with water), share-weighted (sheet Recipes)"
+167,Mie instan (jadi),potassium,,27.405,recipe,"USDA SR Legacy dry noodle (with water), share-weighted (sheet Recipes)"
+167,Mie instan (jadi),sodium,,281.975,recipe,"USDA SR Legacy dry noodle (with water), share-weighted (sheet Recipes)"
+167,Mie instan (jadi),zinc,0.7,0.09,recipe,"USDA SR Legacy dry noodle (with water), share-weighted (sheet Recipes)"
+167,Mie instan (jadi),bdd,100,100,recipe,"USDA SR Legacy dry noodle (with water), share-weighted (sheet Recipes)"
+168,"Makanan ringan anak-anak, krupuk/kripik",dha_epa,0,0,zero_by_biology,none
+169,Ikan matang,dha_epa,0,0,zero_by_composition,none
+170,"Ayam/daging matang (ayam goreng, rendang, dsb)",dha_epa,0,0,zero_by_biology,none
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",energy,298.25,290.8,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",protein,19.625,18.572,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",fat,23.825,22.144,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",dha_epa,0,0,zero_by_biology,none
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",carbohydrate,1.325,4.308,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",fiber,0.7666666666666666,0.6,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",ash,3.425,3.158,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",retinol,301.75,244.6,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",beta_carotene,52,10.4,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",thiamin,0.1075,0.1072,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",riboflavin,0.3824999999999999,0.3170000000000001,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",niacin,4.375,4.8472,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",vitamin_c,0,0,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",calcium,18.25,22.2,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",copper,0.095,0.1038,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",iron,3.525,3.106,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",phosphorus,170.25,178.8,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",potassium,255.775,260.82,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",sodium,958.25,874.1999999999999,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",zinc,3.25,2.75,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+171,"Daging olahan (sosis, nugget, daging asap, dsb) matang",bdd,100,100,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+172,Bubur ayam,energy,,103.08,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+172,Bubur ayam,protein,,2.71,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+172,Bubur ayam,fat,,4.439000000000001,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+172,Bubur ayam,dha_epa,,0,zero_by_composition,none
+172,Bubur ayam,carbohydrate,,13.172,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+172,Bubur ayam,fiber,,0.27,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+172,Bubur ayam,ash,,1.446,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+172,Bubur ayam,retinol,,17.15,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+172,Bubur ayam,beta_carotene,,364.25,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+172,Bubur ayam,thiamin,,0.0401,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+172,Bubur ayam,riboflavin,,0.0242,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+172,Bubur ayam,niacin,,1.173,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+172,Bubur ayam,vitamin_c,,0.15,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+172,Bubur ayam,calcium,,26.5898,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+172,Bubur ayam,copper,,0.0307,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+172,Bubur ayam,iron,,0.476,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+172,Bubur ayam,phosphorus,,31.66,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+172,Bubur ayam,potassium,,47.07800000000001,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+172,Bubur ayam,sodium,,422.015,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+172,Bubur ayam,zinc,,0.132,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+172,Bubur ayam,bdd,,96.66,recipe,"TKPI 2020 raw ingredients (with water, table salt), share-weighted (sheet Recipes)"
+173,"Siomay, batagor",energy,,201.68,recipe,"TKPI 2020 raw ingredients (with water, table salt, fish book tenggiri), share-weighted (sheet Recipes)"
+173,"Siomay, batagor",protein,,8.636000000000001,recipe,"TKPI 2020 raw ingredients (with water, table salt, fish book tenggiri), share-weighted (sheet Recipes)"
+173,"Siomay, batagor",fat,,9.682,recipe,"TKPI 2020 raw ingredients (with water, table salt, fish book tenggiri), share-weighted (sheet Recipes)"
+173,"Siomay, batagor",dha_epa,,0.1966173,recipe,"fish book (Harvard AFCD) tenggiri row, share-weighted"
+173,"Siomay, batagor",carbohydrate,,21.114,recipe,"TKPI 2020 raw ingredients (with water, table salt, fish book tenggiri), share-weighted (sheet Recipes)"
+173,"Siomay, batagor",fiber,,0.602,recipe,"TKPI 2020 raw ingredients (with water, table salt, fish book tenggiri), share-weighted (sheet Recipes)"
+173,"Siomay, batagor",ash,,2.143,recipe,"TKPI 2020 raw ingredients (with water, table salt, fish book tenggiri), share-weighted (sheet Recipes)"
+173,"Siomay, batagor",retinol,,5.08,recipe,"TKPI 2020 raw ingredients (with water, table salt, fish book tenggiri), share-weighted (sheet Recipes)"
+173,"Siomay, batagor",beta_carotene,,1585.9,recipe,"TKPI 2020 raw ingredients (with water, table salt, fish book tenggiri), share-weighted (sheet Recipes)"
+173,"Siomay, batagor",thiamin,,0.0845,recipe,"TKPI 2020 raw ingredients (with water, table salt, fish book tenggiri), share-weighted (sheet Recipes)"
+173,"Siomay, batagor",riboflavin,,19.8673,recipe,"TKPI 2020 raw ingredients (with water, table salt, fish book tenggiri), share-weighted (sheet Recipes)"
+173,"Siomay, batagor",niacin,,3.668,recipe,"TKPI 2020 raw ingredients (with water, table salt, fish book tenggiri), share-weighted (sheet Recipes)"
+173,"Siomay, batagor",vitamin_c,,3.54,recipe,"TKPI 2020 raw ingredients (with water, table salt, fish book tenggiri), share-weighted (sheet Recipes)"
+173,"Siomay, batagor",calcium,,76.92926,recipe,"TKPI 2020 raw ingredients (with water, table salt, fish book tenggiri), share-weighted (sheet Recipes)"
+173,"Siomay, batagor",copper,,0.223286,recipe,"TKPI 2020 raw ingredients (with water, table salt, fish book tenggiri), share-weighted (sheet Recipes)"
+173,"Siomay, batagor",iron,,1.509,recipe,"TKPI 2020 raw ingredients (with water, table salt, fish book tenggiri), share-weighted (sheet Recipes)"
+173,"Siomay, batagor",phosphorus,,141.982,recipe,"TKPI 2020 raw ingredients (with water, table salt, fish book tenggiri), share-weighted (sheet Recipes)"
+173,"Siomay, batagor",potassium,,182.953,recipe,"TKPI 2020 raw ingredients (with water, table salt, fish book tenggiri), share-weighted (sheet Recipes)"
+173,"Siomay, batagor",sodium,,411.417,recipe,"TKPI 2020 raw ingredients (with water, table salt, fish book tenggiri), share-weighted (sheet Recipes)"
+173,"Siomay, batagor",zinc,,0.5306000000000001,recipe,"TKPI 2020 raw ingredients (with water, table salt, fish book tenggiri), share-weighted (sheet Recipes)"
+173,"Siomay, batagor",bdd,,85.5454798206278,recipe,"TKPI 2020 raw ingredients (with water, table salt, fish book tenggiri), share-weighted (sheet Recipes)"
+174,Makanan jadi lainnya,dha_epa,0,0,zero_by_biology,none
+175,Air kemasan,energy,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+175,Air kemasan,protein,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+175,Air kemasan,fat,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+175,Air kemasan,dha_epa,,0,zero_by_biology,none
+175,Air kemasan,carbohydrate,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+175,Air kemasan,fiber,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+175,Air kemasan,ash,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+175,Air kemasan,retinol,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+175,Air kemasan,beta_carotene,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+175,Air kemasan,thiamin,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+175,Air kemasan,riboflavin,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+175,Air kemasan,niacin,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+175,Air kemasan,vitamin_c,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+175,Air kemasan,calcium,,0.914,borrowed,"product label (bottled mineral water, Le Minerale)"
+175,Air kemasan,copper,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+175,Air kemasan,iron,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+175,Air kemasan,phosphorus,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+175,Air kemasan,potassium,,0.3,borrowed,"product label (bottled mineral water, Le Minerale)"
+175,Air kemasan,sodium,,3.5,borrowed,"product label (bottled mineral water, Le Minerale)"
+175,Air kemasan,zinc,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+175,Air kemasan,bdd,,100,borrowed,"product label (bottled mineral water, Le Minerale)"
+176,Air kemasan galon,energy,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+176,Air kemasan galon,protein,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+176,Air kemasan galon,fat,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+176,Air kemasan galon,dha_epa,,0,zero_by_biology,none
+176,Air kemasan galon,carbohydrate,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+176,Air kemasan galon,fiber,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+176,Air kemasan galon,ash,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+176,Air kemasan galon,retinol,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+176,Air kemasan galon,beta_carotene,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+176,Air kemasan galon,thiamin,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+176,Air kemasan galon,riboflavin,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+176,Air kemasan galon,niacin,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+176,Air kemasan galon,vitamin_c,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+176,Air kemasan galon,calcium,,0.914,borrowed,"product label (bottled mineral water, Le Minerale)"
+176,Air kemasan galon,copper,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+176,Air kemasan galon,iron,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+176,Air kemasan galon,phosphorus,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+176,Air kemasan galon,potassium,,0.3,borrowed,"product label (bottled mineral water, Le Minerale)"
+176,Air kemasan galon,sodium,,3.5,borrowed,"product label (bottled mineral water, Le Minerale)"
+176,Air kemasan galon,zinc,,0,borrowed,"product label (bottled mineral water, Le Minerale)"
+176,Air kemasan galon,bdd,,100,borrowed,"product label (bottled mineral water, Le Minerale)"
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",energy,12.8,42.66666666666666,borrowed,"USDA FoodData Central, SR Legacy"
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",protein,0,0.03,borrowed,"USDA FoodData Central, SR Legacy"
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",fat,0,0.1566666666666666,borrowed,"USDA FoodData Central, SR Legacy"
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",dha_epa,0,0,zero_by_biology,none
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",carbohydrate,3.2,10.52666666666667,borrowed,"USDA FoodData Central, SR Legacy"
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",fiber,0,0,borrowed,"USDA FoodData Central, SR Legacy"
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",ash,0,0.02333333333333333,borrowed,"USDA FoodData Central, SR Legacy"
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",retinol,0,0,borrowed,"USDA FoodData Central, SR Legacy"
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",beta_carotene,0,0,borrowed,"USDA FoodData Central, SR Legacy"
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",thiamin,0,0,borrowed,"USDA FoodData Central, SR Legacy"
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",riboflavin,0,0,borrowed,"USDA FoodData Central, SR Legacy"
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",niacin,0,0.005,borrowed,"USDA FoodData Central, SR Legacy"
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",vitamin_c,0,0,borrowed,"USDA FoodData Central, SR Legacy"
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",calcium,2,2.333333333333333,borrowed,"USDA FoodData Central, SR Legacy"
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",copper,,0.004333333333333334,borrowed,"USDA FoodData Central, SR Legacy"
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",iron,0,0.01333333333333333,borrowed,"USDA FoodData Central, SR Legacy"
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",phosphorus,,3.333333333333333,borrowed,"USDA FoodData Central, SR Legacy"
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",potassium,,6.666666666666667,borrowed,"USDA FoodData Central, SR Legacy"
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",sodium,,5.333333333333333,borrowed,"USDA FoodData Central, SR Legacy"
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",zinc,0,0.03666666666666666,borrowed,"USDA FoodData Central, SR Legacy"
+177,"Air teh kemasan, minuman bersoda/mengandung CO2",bdd,100,100,borrowed,none
+178,"Sari buah kemasan, minuman kesehatan, minuman berenergi",dha_epa,0,0,zero_by_biology,none
+178,"Sari buah kemasan, minuman kesehatan, minuman berenergi",beta_carotene,,0,borrowed,"USDA FoodData Central, SR Legacy"
+178,"Sari buah kemasan, minuman kesehatan, minuman berenergi",copper,,0.0065,borrowed,"USDA FoodData Central, SR Legacy"
+179,"Minuman jadi (kopi, kopi susu, teh, susu coklat, dsb)",dha_epa,0,0,zero_by_biology,none
+179,"Minuman jadi (kopi, kopi susu, teh, susu coklat, dsb)",copper,,0.0335,borrowed,"USDA FoodData Central, SR Legacy"
+179,"Minuman jadi (kopi, kopi susu, teh, susu coklat, dsb)",zinc,,0.335,borrowed,"USDA FoodData Central, SR Legacy"
+180,Es krim,dha_epa,0,0,zero_by_biology,none
+181,Es lainnya,energy,,79.20000000000002,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+181,Es lainnya,protein,,2.076,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+181,Es lainnya,fat,,1.753,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+181,Es lainnya,dha_epa,,0,zero_by_biology,none
+181,Es lainnya,carbohydrate,,14.362,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+181,Es lainnya,fiber,,0.7410000000000001,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+181,Es lainnya,ash,,0.6670000000000001,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+181,Es lainnya,retinol,,13.95,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+181,Es lainnya,beta_carotene,,45.48999999999999,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+181,Es lainnya,thiamin,,0.0325,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+181,Es lainnya,riboflavin,,0.0656,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+181,Es lainnya,niacin,,0.3460000000000001,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+181,Es lainnya,vitamin_c,,4.39,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+181,Es lainnya,calcium,,46.2742,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+181,Es lainnya,copper,,12.4136,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+181,Es lainnya,iron,,0.6510000000000001,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+181,Es lainnya,phosphorus,,42.53000000000001,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+181,Es lainnya,potassium,,195.697,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+181,Es lainnya,sodium,,18.37,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+181,Es lainnya,zinc,,0.42,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+181,Es lainnya,bdd,,83.60000000000001,recipe,"TKPI 2020 raw ingredients (with water), share-weighted (sheet Recipes)"
+182,Minuman keras,energy,,169,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+182,Minuman keras,protein,,0.23,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+182,Minuman keras,fat,,0,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+182,Minuman keras,dha_epa,,0,zero_by_biology,none
+182,Minuman keras,carbohydrate,,1.775,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+182,Minuman keras,fiber,,0,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+182,Minuman keras,ash,,0.085,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+182,Minuman keras,retinol,,0,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+182,Minuman keras,beta_carotene,,0,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+182,Minuman keras,thiamin,,0.0055,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+182,Minuman keras,riboflavin,,0.0145,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+182,Minuman keras,niacin,,0.263,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+182,Minuman keras,vitamin_c,,0,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+182,Minuman keras,calcium,,2,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+182,Minuman keras,copper,,0.013,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+182,Minuman keras,iron,,0.03,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+182,Minuman keras,phosphorus,,9,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+182,Minuman keras,potassium,,14.5,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+182,Minuman keras,sodium,,2.5,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+182,Minuman keras,zinc,,0.025,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
+182,Minuman keras,bdd,,100,recipe,"TKPI 2020 raw ingredients (with USDA entries), share-weighted (sheet Recipes)"
