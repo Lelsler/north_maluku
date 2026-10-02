@@ -9,7 +9,7 @@
 # Name: Farid Annam
 # Affiliation: Harvard T.H. Chan School of Public Health
 # For: north_maluku
-# Date updated: 9/23/2026
+# Date updated: 9/29/2026
 ###################################################################################################################
 # The fish book (1_master/clean/fish_book_afcd.csv, the original file,
 # READ-ONLY) has one row per linked fish, 39 rows: the IKAN header (item 16)
@@ -17,8 +17,10 @@
 # susenas_item, food_group, food_name, taxonomy and a 21-column nutrient
 # panel (energy, protein, fat, dha_epa, carbohydrate, fiber, ash, retinol,
 # beta_carotene, thiamin, riboflavin, niacin, vitamin_c, calcium, copper,
-# iron, phosphorus, potassium, sodium, zinc, bdd). The output keeps these
-# names and this order.
+# iron, phosphorus, potassium, sodium, zinc, bdd). The output keeps this
+# order and names each column nutrient_unit_100g (energy_kcal_100g,
+# protein_g_100g, ..., zinc_mg_100g; the edible portion in percent is
+# bdd_pct).
 #
 # Method:
 #  - Every SUSENAS item takes the plain mean of its linked fish-book rows.
@@ -27,8 +29,9 @@
 #      26 Mas, nila             = mean of Mas, Nila
 #  - A nutrient missing for a member is excluded from that nutrient's mean,
 #    never treated as zero (no cell is missing in the current fish book).
-#  - bdd is stored in the fish book as a FRACTION (0.19-0.61). TKPI stores
-#    bdd as a PERCENTAGE (0-100), so bdd is multiplied by 100 here to match.
+#  - bdd (edible portion) is stored in the fish book as a FRACTION (0.19-0.61).
+#    TKPI stores it as a PERCENTAGE (0-100), so it is multiplied by 100 here
+#    to match and named bdd_pct.
 #    This is the only value transformation in the script; the source file
 #    is not touched.
 #  - All other values are used exactly as published.
@@ -49,10 +52,21 @@ fish_file <- '~/Desktop/indonesia_fct/datasets/1_master/clean/fish_book_afcd.csv
 link_file <- '~/Desktop/indonesia_fct/datasets/2_process/linking_susenas_afcd.csv'
 out_dir   <- '~/Desktop/indonesia_fct/datasets/2_process'
 
-# nutrient columns: taken from the fish book itself (every column after
-# 'kingdom'), so their names and order are exactly the fish book's. The same
-# standard names are used in the non-aquatic and complete tables.
-id_cols <- c('coicop_code','susenas_code','susenas_item','food_group')
+# nutrient columns: the fish book's 21 nutrient columns (every column after
+# 'kingdom') in the fish book's order, each renamed nutrient_unit_100g: the
+# fish book's name, its unit, per 100 g (bdd, the edible portion in percent,
+# becomes bdd_pct). The same names are used in the non-aquatic and complete
+# tables.
+id_cols  <- c('coicop_code','susenas_code','susenas_item','food_group')
+fish_map <- c(energy='energy_kcal_100g', protein='protein_g_100g', fat='fat_g_100g',
+              dha_epa='dha_epa_g_100g', carbohydrate='carbohydrate_g_100g',
+              fiber='fiber_g_100g', ash='ash_g_100g', retinol='retinol_mcg_100g',
+              beta_carotene='beta_carotene_mcg_100g', thiamin='thiamin_mg_100g',
+              riboflavin='riboflavin_mg_100g', niacin='niacin_mg_100g',
+              vitamin_c='vitamin_c_mg_100g', calcium='calcium_mg_100g',
+              copper='copper_mg_100g', iron='iron_mg_100g',
+              phosphorus='phosphorus_mg_100g', potassium='potassium_mg_100g',
+              sodium='sodium_mg_100g', zinc='zinc_mg_100g', bdd='bdd_pct')
 
 ###################################################################################################################
 ## 1. Read the fish book and confirm its structure
@@ -63,9 +77,11 @@ names(fish)[1] <- 'row_id'                 # the unnamed first column
 
 stopifnot(nrow(fish) == 39, 'kingdom' %in% names(fish),
           all(c(id_cols, 'food_name', 'method', 'sciname') %in% names(fish)))
-nutr <- names(fish)[(which(names(fish) == 'kingdom') + 1):ncol(fish)]
-stopifnot(length(nutr) == 21, all(c('bdd', 'dha_epa', 'protein') %in% nutr))
-cat('Nutrient columns (from the fish book):', paste(nutr, collapse = ' '), '\n')
+fish_nutr <- names(fish)[(which(names(fish) == 'kingdom') + 1):ncol(fish)]
+stopifnot(identical(fish_nutr, names(fish_map)))     # the 21 columns, in the fish book's order
+names(fish)[match(names(fish_map), names(fish))] <- unname(fish_map)   # -> nutrient_unit_100g
+nutr <- unname(fish_map)
+cat('Nutrient columns (from the fish book, renamed):', paste(nutr, collapse = ' '), '\n')
 
 fish <- fish %>%
   mutate(susenas_code = as.numeric(susenas_code),
@@ -106,12 +122,12 @@ stopifnot(nrow(lk) == nrow(fish),
 cat('Linking file and fish book agree on code, name, method, sciname\n')
 
 ###################################################################################################################
-## 3. bdd: fraction -> percentage (the only transformation)
+## 3. bdd_pct: fraction -> percentage (the only transformation)
 
-stopifnot(all(fish$bdd > 0 & fish$bdd <= 1))     # confirms the fraction basis
-fish <- fish %>% mutate(bdd = bdd * 100)
-cat('bdd converted from fraction to percentage: range',
-    round(min(fish$bdd), 2), '-', round(max(fish$bdd), 2), '%\n')
+stopifnot(all(fish$bdd_pct > 0 & fish$bdd_pct <= 1))     # confirms the fraction basis
+fish <- fish %>% mutate(bdd_pct = bdd_pct * 100)
+cat('bdd_pct converted from fraction to percentage: range',
+    round(min(fish$bdd_pct), 2), '-', round(max(fish$bdd_pct), 2), '%\n')
 
 ###################################################################################################################
 ## 4. Assemble - header row 16 + the plain mean of each item's linked rows,
@@ -136,10 +152,10 @@ stopifnot(nrow(fct_aquatic) == 36, ncol(fct_aquatic) == 4 + length(nutr),
 
 # hand check of the two pooled items on protein, and single-row items must
 # equal their fish-book row exactly in every nutrient
-stopifnot(near(fct_aquatic$protein[fct_aquatic$susenas_code == 18],
-               mean(fish$protein[fish$susenas_code == 18])),
-          near(fct_aquatic$protein[fct_aquatic$susenas_code == 26],
-               mean(fish$protein[fish$susenas_code == 26])))
+stopifnot(near(fct_aquatic$protein_g_100g[fct_aquatic$susenas_code == 18],
+               mean(fish$protein_g_100g[fish$susenas_code == 18])),
+          near(fct_aquatic$protein_g_100g[fct_aquatic$susenas_code == 26],
+               mean(fish$protein_g_100g[fish$susenas_code == 26])))
 for (cn in nutr) {
   single <- n_fish$susenas_code[n_fish$n == 1]
   stopifnot(all(fct_aquatic[[cn]][match(single, fct_aquatic$susenas_code)] ==
