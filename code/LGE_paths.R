@@ -12,17 +12,22 @@ library(readxl)
 library(tidyverse)
 
 # directories
-wk_dir      <- '~/Dropbox/Harvard/nutrition_oriented/north_maluku/north_maluku'
+out_dir      <- '~/Dropbox/Harvard/nutrition_oriented/north_maluku/north_maluku'
 data_dir <- '~/Dropbox/data'
+
+link_file <- '~/Desktop/indonesia_fct/datasets/2_process/linking_susenas_afcd.csv'
+
+## AFCD
+fish_file   <- read.csv('~/Dropbox/Harvard/nutrition_oriented/git/data/fish_book_afcd.csv')
+link_file <- read.csv(file.path(wk_dir, 'data/linking_susenas_afcd.csv')) # afcd linking file
+
+fish_book_afcd_odd_values
 
 ## susenas consumption data
 blok_41 <- read.dbf(file.path(data_dir,'susenas/blok41_51_94.dbf'))
-aquatic_fct   <- read.csv('~/Dropbox/Harvard/nutrition_oriented/git/data/fish_book_afcd.csv')
-NEW_afct   <- read.csv('~/Dropbox/Harvard/nutrition_oriented/git/data/fish_book_afcd.csv')
 
-## food composition tables
+## susenas + final food composition table 
 final <- read.csv(file.path(wk_dir, 'data/blok41_fct_joined.csv'))
 
-# afcd linking file
-linking_afcd    <- read.csv(file.path(wk_dir, 'data/linking_susenas_afcd.csv'))
+
 
