@@ -1,7 +1,7 @@
 # This file builds the complete Indonesia food composition table covering
 # every SUSENAS food item 1-182, in two moves:
 #   1. stack the two component tables
-#        indonesia_fct_nonaquatic_food.csv  (TKPI, SMILING, ASEAN; items outside 16-51)
+#        indonesia_fct_nonaquatic_food.csv  (TKPI, ASEAN FCD; items outside 16-51)
 #        indonesia_fct_aquatic_food.csv     (fish book; items 16-51)
 #   2. fill from fct_nutrients_filled.xlsx, sheet Nutrient Fill: one row per
 #      cell whose value does not come from the component tables (recipes,
@@ -15,32 +15,33 @@
 # Name: Farid Annam
 # Affiliation: Harvard T.H. Chan School of Public Health
 # For: north_maluku
-# Date updated: 9/23/2026
+# Date updated: 9/29/2026
 ###################################################################################################################
 # Method:
 #  - The stack performs NO arithmetic: 146 non-aquatic + 36 aquatic rows = 182,
 #    each susenas_code exactly once, every cell copied verbatim.
 #  - Both tables share one panel, the fish book's 21 nutrient columns in the
-#    fish book's order (energy to bdd, dha_epa fourth). The complete table has
-#    27 columns: six identifiers, then that panel.
+#    fish book's order, named nutrient_unit_100g (energy_kcal_100g to bdd_pct,
+#    dha_epa_g_100g fourth). The complete table has 27 columns: six
+#    identifiers, then that panel.
 #  - Fill rule. Each Nutrient Fill row names one cell (susenas_code, nutrient)
 #    and its value. A row whose cause starts "cell replaced" or "cell
 #    documented" overwrites the cell; every other row fills a blank cell and
 #    the script stops if that cell is not blank. Header rows are never
 #    touched. After the fill no food item may have a blank nutrient.
-#  - Source column. An item whose 20 panel cells (all but dha_epa) come from
+#  - Source column. An item whose 20 panel cells (all but dha_epa_g_100g) come from
 #    the workbook is labelled with the databases behind them, read from the
 #    workbook itself: the ingredient sources of its recipe (sheet Recipes) and
 #    the source tables of its borrowed cells (sheet Nutrient Fill), as
 #    tkpi, afcd, usda, taco, brand (a manufacturer's specification), fao (an
 #    FAO/WHO purity specification), several names separated by a comma;
 #    source_codes lists the ingredient codes and source ids. Every other item
-#    keeps the label of its origin table (tkpi, smiling, asean_fcd, afcd,
+#    keeps the label of its origin table (tkpi, asean_fcd, afcd,
 #    food_category). Which cells the workbook supplied is recorded in the
 #    companion file indonesia_fct_gap_filling.csv (one row per filled cell:
 #    value before, value after, method, source table).
 #  - Category header rows (13, one per food group) keep every nutrient blank,
-#    bdd included.
+#    bdd_pct included.
 #  - Validation: every cell the workbook did not touch must equal its origin
 #    cell; every cell it touched must equal the workbook value; and the 21
 #    nutrient columns must equal sheet Final Values of the workbook cell for
@@ -62,10 +63,12 @@ out_dir <- '~/Desktop/indonesia_fct/datasets/2_process'
 # column layout of the complete table
 meta_cols <- c('coicop_code', 'susenas_code', 'susenas_item', 'food_group',
                'source', 'source_codes')
-nutr_cols <- c('energy','protein','fat','dha_epa','carbohydrate','fiber','ash',
-               'retinol','beta_carotene','thiamin','riboflavin','niacin',
-               'vitamin_c','calcium','copper','iron','phosphorus','potassium',
-               'sodium','zinc','bdd')
+nutr_cols <- c('energy_kcal_100g','protein_g_100g','fat_g_100g','dha_epa_g_100g',
+               'carbohydrate_g_100g','fiber_g_100g','ash_g_100g','retinol_mcg_100g',
+               'beta_carotene_mcg_100g','thiamin_mg_100g','riboflavin_mg_100g',
+               'niacin_mg_100g','vitamin_c_mg_100g','calcium_mg_100g','copper_mg_100g',
+               'iron_mg_100g','phosphorus_mg_100g','potassium_mg_100g','sodium_mg_100g',
+               'zinc_mg_100g','bdd_pct')
 all_cols  <- c(meta_cols, nutr_cols)
 
 ###################################################################################################################
@@ -151,9 +154,9 @@ source_word <- function(s) case_when(str_detect(s, '^TKPI')     ~ 'tkpi',
                                      str_detect(s, 'Ajinomoto') ~ 'brand',
                                      str_detect(s, 'JECFA')     ~ 'fao',
                                      TRUE                       ~ NA_character_)
-label_order <- c('tkpi', 'smiling', 'asean_fcd', 'afcd', 'taco', 'usda', 'myfcd', 'brand', 'fao')
+label_order <- c('tkpi', 'asean_fcd', 'afcd', 'taco', 'usda', 'myfcd', 'brand', 'fao')
 
-whole_items <- fill %>% filter(nutrient != 'dha_epa') %>% count(susenas_code) %>%
+whole_items <- fill %>% filter(nutrient != 'dha_epa_g_100g') %>% count(susenas_code) %>%
   filter(n == length(nutr_cols) - 1) %>% pull(susenas_code)
 labels <- map_dfr(whole_items, function(code) {
   borrowed <- fill %>% filter(susenas_code == code, method != 'recipe', source_table != 'none')

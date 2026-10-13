@@ -5,8 +5,9 @@
 #            rename columns to readable names, and remove the category
 #            subtotal rows (subgroup_code == 0) before anything else
 #   step 2 - remove rokok (items 183-188), join the food composition
-#            table (the fish book's 21 nutrient columns, energy through
-#            bdd; per 100 g edible portion), and number the records (id)
+#            table (the fish book's 21 nutrient columns, named
+#            nutrient_unit_100g, energy_kcal_100g through bdd_pct; per
+#            100 g edible portion), and number the records (id)
 #            (the pure join of blok 41 and indonesia_fct_complete)
 #   step 3 - add the unit conversion (grams per recorded unit, from
 #            food_composition_units.xlsx) and write blok41_fct_joined.csv,
@@ -21,7 +22,7 @@
 # Name: Farid Annam
 # Affiliation: Harvard T.H. Chan School of Public Health
 # For: north_maluku
-# Date updated: 9/23/2026
+# Date updated: 9/29/2026
 ###################################################################################################################
 # Inputs:
 #   ~/Desktop/susenas_data/blok41_51_94.dbf
@@ -100,21 +101,24 @@ stopifnot(nrow(blok_41) - nrow(blok41_fct_joined) == 4259)
 stopifnot(nrow(blok41_fct_joined) == 146636)
 
 # join the food composition table: item name, food group, and its 21
-# nutrient columns (energy through bdd, the edible portion in %; dha_epa is
-# the fourth). Values are per 100 g edible portion; every food item carries
-# a bdd and a dha_epa.
+# nutrient columns, named nutrient_unit_100g (energy_kcal_100g through
+# bdd_pct, the edible portion in %; dha_epa_g_100g is the fourth). Values
+# are per 100 g edible portion; every food item carries a bdd_pct and a
+# dha_epa_g_100g.
 
 fct <- read_csv(file.path(dir_2process, "indonesia_fct_complete.csv"),
                 show_col_types = FALSE) %>%
-  select(susenas_code, susenas_item, food_group, energy:bdd)
+  select(susenas_code, susenas_item, food_group, energy_kcal_100g:bdd_pct)
 stopifnot(nrow(fct) == 182, !any(duplicated(fct$susenas_code)),
           identical(names(fct)[4:24], c(
-            "energy", "protein", "fat", "dha_epa", "carbohydrate", "fiber", "ash",
-            "retinol", "beta_carotene", "thiamin", "riboflavin", "niacin",
-            "vitamin_c", "calcium", "copper", "iron", "phosphorus", "potassium",
-            "sodium", "zinc", "bdd")),
-          all(!is.na(fct$bdd[fct$susenas_item != fct$food_group])),
-          all(!is.na(fct$dha_epa[fct$susenas_item != fct$food_group])))
+            "energy_kcal_100g", "protein_g_100g", "fat_g_100g", "dha_epa_g_100g",
+            "carbohydrate_g_100g", "fiber_g_100g", "ash_g_100g", "retinol_mcg_100g",
+            "beta_carotene_mcg_100g", "thiamin_mg_100g", "riboflavin_mg_100g",
+            "niacin_mg_100g", "vitamin_c_mg_100g", "calcium_mg_100g", "copper_mg_100g",
+            "iron_mg_100g", "phosphorus_mg_100g", "potassium_mg_100g", "sodium_mg_100g",
+            "zinc_mg_100g", "bdd_pct")),
+          all(!is.na(fct$bdd_pct[fct$susenas_item != fct$food_group])),
+          all(!is.na(fct$dha_epa_g_100g[fct$susenas_item != fct$food_group])))
 
 blok41_fct_joined <- blok41_fct_joined %>%
   left_join(fct, by = c("food_item_id_urut" = "susenas_code"))
